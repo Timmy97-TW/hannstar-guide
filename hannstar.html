@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>瀚宇彩晶 產業導覽</title>
+<meta name="description" content="中小尺寸 TFT-LCD 面板業的背景知識：技術、術語、產業鏈、台灣面板史、瀚宇彩晶公司解析、趨勢與業務實務。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b2230;--muted:#66717f;--line:#e4e8ee;--soft:#f4f6f9;--bg:#ffffff;
+  --brand:#0f5fa8;--brand-soft:#e6f0fb;--teal:#0b8a7c;--teal-soft:#e3f4f1;
+  --amber:#d9931e;--amber-soft:#fdf2df;--red:#c9463d;--red-soft:#fbe7e5;--green:#2f9a5d;--green-soft:#e4f5ea;
+  --violet:#6b4fbb;--violet-soft:#eeeafb;
+  --radius:14px;--shadow:0 1px 2px rgba(20,30,50,.06),0 8px 24px rgba(20,30,50,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}
+h1,h2,h3,h4{line-height:1.25;margin:0}
+p{margin:0 0 .6em}
+button{font-family:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;padding:14px 0 6px}
+.logo{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--teal));display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px;letter-spacing:.5px}
+.brand h1{font-size:18px;font-weight:700}
+.brand small{display:block;font-size:12px;color:var(--muted);font-weight:400}
+nav{display:flex;gap:4px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:0 0 auto;border:1px solid transparent;background:transparent;color:var(--muted);padding:8px 13px;border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px}
+nav button .n{font-size:11px;font-weight:700;color:var(--brand);opacity:.7}
+nav button:hover{background:var(--soft);color:var(--ink)}
+nav button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+nav button.active .n{color:#fff;opacity:.8}
+
+/* sections */
+section.tab{display:none;padding:36px 0 72px;animation:fade .25s ease}
+section.tab.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.sec-head{margin-bottom:28px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--brand);text-transform:uppercase}
+.sec-head h2{font-size:30px;font-weight:900;margin:6px 0 8px}
+.lede{font-size:17px;color:var(--muted);max-width:720px}
+h3.block{font-size:20px;font-weight:700;margin:40px 0 14px;display:flex;align-items:center;gap:10px}
+h3.block::before{content:"";width:6px;height:22px;border-radius:3px;background:var(--brand)}
+.note{font-size:13px;color:var(--muted)}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;background:var(--soft);color:var(--muted)}
+.chip.b{background:var(--brand-soft);color:var(--brand)}
+.chip.t{background:var(--teal-soft);color:var(--teal)}
+.chip.a{background:var(--amber-soft);color:var(--amber)}
+.chip.r{background:var(--red-soft);color:var(--red)}
+.chip.g{background:var(--green-soft);color:var(--green)}
+.chip.v{background:var(--violet-soft);color:var(--violet)}
+
+/* grids & cards */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.g6{grid-template-columns:repeat(6,1fr)}
+@media(max-width:900px){.g3,.g4,.g5,.g6{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g2,.g3,.g4,.g5,.g6{grid-template-columns:1fr}.g4.keep2,.g6.keep2,.g5.keep2{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+.card h4{font-size:16px;font-weight:700;margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted);margin:0}
+.card.soft{background:var(--soft);border-color:transparent;box-shadow:none}
+.stat{background:var(--soft);border-radius:var(--radius);padding:18px 18px 14px}
+.stat .v{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.1}
+.stat .v small{font-size:14px;font-weight:700;color:var(--muted);margin-left:2px}
+.stat .l{font-size:13px;color:var(--muted);margin-top:4px}
+.icon-tile{text-align:center;padding:16px 8px;border-radius:var(--radius);background:var(--soft)}
+.icon-tile svg{width:44px;height:44px;display:block;margin:0 auto 8px}
+.icon-tile b{display:block;font-size:14px}
+.icon-tile span{font-size:12px;color:var(--muted)}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);padding:14px 18px;border-radius:0 12px 12px 0;font-size:15px}
+.callout.warn{border-color:var(--amber);background:var(--amber-soft)}
+.callout.red{border-color:var(--red);background:var(--red-soft)}
+.callout b{font-weight:700}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:700;font-size:13px;color:var(--muted);white-space:nowrap}
+tr:hover td{background:#fafbfd}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+.tbl table{min-width:640px}
+td.k{font-weight:700;white-space:nowrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px}
+.good{color:var(--green);font-weight:700}.bad{color:var(--red);font-weight:700}.mid{color:var(--amber);font-weight:700}
+
+/* timeline */
+.tl{position:relative;padding-left:26px;border-left:2px solid var(--line);margin-left:8px}
+.tl .ev{position:relative;padding-bottom:22px}
+.tl .ev::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--brand)}
+.tl .ev.red::before{border-color:var(--red)}
+.tl .ev.amber::before{border-color:var(--amber)}
+.tl .ev.green::before{border-color:var(--green)}
+.tl .y{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.05em}
+.tl .ev.red .y{color:var(--red)}.tl .ev.amber .y{color:var(--amber)}.tl .ev.green .y{color:var(--green)}
+.tl .t{font-weight:700;font-size:16px}
+.tl .d{font-size:14px;color:var(--muted)}
+.htl{display:flex;gap:14px;overflow-x:auto;padding:6px 4px 18px;scroll-snap-type:x mandatory}
+.htl .hev{flex:0 0 250px;scroll-snap-align:start;border-radius:var(--radius);padding:16px;border-top:5px solid var(--brand);background:var(--soft)}
+.htl .hev .y{font-size:22px;font-weight:900;letter-spacing:-.02em}
+.htl .hev .t{font-weight:700;font-size:15px;margin:2px 0 6px}
+.htl .hev .d{font-size:13px;color:var(--muted)}
+.era{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.era span{font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;color:#fff}
+
+/* interactive bits */
+.toggle{display:inline-flex;background:var(--soft);border-radius:999px;padding:4px;gap:4px;flex-wrap:wrap}
+.toggle button{border:0;background:transparent;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer}
+.toggle button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+.info{background:var(--soft);border-radius:var(--radius);padding:18px 20px;min-height:160px}
+.info h4{font-size:18px;font-weight:900;margin-bottom:6px}
+.info p{font-size:14px;color:var(--muted)}
+.info .tag{font-size:12px;font-weight:700;color:var(--brand)}
+svg text{font-family:inherit}
+.layer{cursor:pointer;transition:transform .2s}
+.layer:hover{transform:translateX(10px)}
+.layer.on polygon.top{stroke:var(--ink);stroke-width:2.5}
+.steps{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.steps{grid-template-columns:repeat(2,1fr)}}
+.step{background:var(--soft);border-radius:12px;padding:12px 10px;cursor:pointer;border:2px solid transparent;text-align:center}
+.step.on{border-color:var(--brand);background:var(--brand-soft)}
+.step .n{font-size:11px;font-weight:700;color:var(--brand)}
+.step b{display:block;font-size:14px;margin-top:2px}
+.flip-wrap{perspective:1000px}
+.gl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.gl{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gl{grid-template-columns:1fr}}
+.term{border:1px solid var(--line);border-radius:12px;padding:14px 16px;cursor:pointer;background:#fff;transition:box-shadow .15s}
+.term:hover{box-shadow:var(--shadow)}
+.term .h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.term .h b{font-size:15px}
+.term .h i{font-style:normal;font-size:12px;color:var(--muted);text-align:right}
+.term .def{font-size:14px;color:var(--ink);margin-top:4px}
+.term .sc{display:none;font-size:13px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.term.open .sc{display:block}
+.term .sc::before{content:"業務情境 ";font-weight:700;color:var(--teal)}
+.search{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;outline:none}
+.search:focus{border-color:var(--brand)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 18px}
+.filters button{border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;color:var(--muted)}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.swot{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:560px){.swot{grid-template-columns:1fr}}
+.swot .q{border-radius:var(--radius);padding:16px 18px}
+.swot .q h4{font-size:15px;margin-bottom:8px}
+.swot ul{margin:0;padding-left:18px;font-size:14px}
+.swot li{margin-bottom:4px}
+.quiz .q{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:14px}
+.quiz .q b{display:block;margin-bottom:10px}
+.quiz .opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:10px;margin-bottom:6px;cursor:pointer;font-size:14px}
+.quiz .opt:hover{background:var(--soft)}
+.quiz .opt.ok{background:var(--green-soft);border-color:var(--green)}
+.quiz .opt.no{background:var(--red-soft);border-color:var(--red)}
+.quiz .exp{display:none;font-size:13px;color:var(--muted);margin-top:8px}
+.quiz .q.done .exp{display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:6px 12px;border-radius:10px;font-size:13px;font-weight:700;background:var(--soft)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:12px;color:var(--muted)}
+.src{font-size:12px;color:var(--muted);margin-top:10px}
+.big-q{font-size:20px;font-weight:900;margin-bottom:4px}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
+@media(max-width:560px){.vs{grid-template-columns:1fr}.vs .x{display:none}}
+.vs .x{font-weight:900;color:var(--muted)}
+.bar{height:10px;border-radius:5px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">HS</div>
+      <h1>瀚宇彩晶 產業導覽 <small>中小尺寸 TFT-LCD 面板業：技術、產業、公司、業務實務</small></h1>
+    </div>
+    <nav id="nav">
+      <button data-tab="home"><span class="n">01</span>總覽</button>
+      <button data-tab="tech"><span class="n">02</span>面板技術</button>
+      <button data-tab="terms"><span class="n">03</span>術語庫</button>
+      <button data-tab="chain"><span class="n">04</span>產業鏈</button>
+      <button data-tab="history"><span class="n">05</span>台灣面板史</button>
+      <button data-tab="hannstar"><span class="n">06</span>彩晶解析</button>
+      <button data-tab="trend"><span class="n">07</span>趨勢與挑戰</button>
+      <button data-tab="sales"><span class="n">08</span>業務實務</button>
+      <button data-tab="quiz"><span class="n">09</span>測驗</button>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<!-- ============ 01 總覽 ============ -->
+<section class="tab" id="tab-home">
+  <div class="sec-head">
+    <div class="kicker">Overview</div>
+    <h2>瀚宇彩晶，一頁看懂</h2>
+    <p class="lede">HannStar Display，股票代號 6116。台灣的中小尺寸 TFT-LCD 面板廠，華新麗華集團成員。面板賣給手機、平板、車用、工控與穿戴裝置的客戶。</p>
+  </div>
+
+  <div class="grid g6 keep2">
+    <div class="stat"><div class="v">1998</div><div class="l">成立於 6 月，2004 年上市</div></div>
+    <div class="stat"><div class="v">5.3<small>代</small></div><div class="l">南科單一前段廠，a-Si 製程</div></div>
+    <div class="stat"><div class="v">14<small>萬片/月</small></div><div class="l">玻璃基板產能，彩色濾光片 100% 自製</div></div>
+    <div class="stat"><div class="v">114<small>億</small></div><div class="l">2025 年營收（新台幣），年增 15%</div></div>
+    <div class="stat"><div class="v">-0.75</div><div class="l">2025 年每股虧損，連續第 4 年虧損</div></div>
+    <div class="stat"><div class="v">≈50%</div><div class="l">車載 + 工控佔營收（2025 前三季）</div></div>
+  </div>
+
+  <h3 class="block">三件事先記住</h3>
+  <div class="grid g3">
+    <div class="card"><span class="chip b">做什麼</span><h4 style="margin-top:8px">中小尺寸 LCD 面板與模組</h4><p>用最成熟、成本最低的非晶矽（a-Si）TFT 製程，生產約 1 到 24 吋的面板。產品從裸面板（Open Cell）到含背光、觸控的完整模組。</p></div>
+    <div class="card"><span class="chip a">處境</span><h4 style="margin-top:8px">消費性面板賠錢，往車載工控搬</h4><p>中國面板廠以更大世代線壓低價格，手機與平板面板長期無利可圖。公司自 2019 年起把重心移向車載與工控，目標 2027 年車載營收佔 3 成以上。</p></div>
+    <div class="card"><span class="chip r">此刻</span><h4 style="margin-top:8px">轉型與收縮同時進行</h4><p>2026 年 4 月賣出南科廠房、9 月總經理請辭、媒體報導第四季減產與大規模優離。公司對外說法是人力例行調整。</p></div>
+  </div>
+
+  <h3 class="block">面板用在哪裡</h3>
+  <div class="grid g5 keep2">
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#0f5fa8" stroke-width="2"><rect x="14" y="4" width="20" height="40" rx="3"/><line x1="20" y1="40" x2="28" y2="40"/></svg><b>手機 / 功能機</b><span>2025 佔約 35%，逐年下降</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#0f5fa8" stroke-width="2"><rect x="6" y="8" width="36" height="32" rx="3"/><circle cx="24" cy="36" r="1.5"/></svg><b>平板 / 教育</b><span>約 8 到 10%，白牌與教育市場</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#0b8a7c" stroke-width="2"><path d="M8 30l4-12h24l4 12v8H8z"/><circle cx="14" cy="34" r="3"/><circle cx="34" cy="34" r="3"/><rect x="18" y="22" width="12" height="6" rx="1"/></svg><b>車載</b><span>中控、儀表、HUD、電子後視鏡、乘客屏</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#0b8a7c" stroke-width="2"><circle cx="12" cy="34" r="6"/><circle cx="36" cy="34" r="6"/><path d="M12 34l8-14h10l6 14M20 20l-4-6h6"/></svg><b>二輪車</b><span>儀表由段碼屏改為 TFT 彩屏</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#0b8a7c" stroke-width="2"><rect x="6" y="10" width="36" height="24" rx="2"/><path d="M14 34v6h20v-6"/><path d="M12 16h10M12 22h6"/></svg><b>工控 HMI</b><span>機台操作面板、POS、自助機</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#6b4fbb" stroke-width="2"><rect x="16" y="12" width="16" height="24" rx="4"/><path d="M20 12V6h8v6M20 36v6h8v-6"/></svg><b>穿戴</b><span>全球首發 TDDI in-cell 穿戴面板</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#6b4fbb" stroke-width="2"><path d="M24 6v36M6 24h36"/><circle cx="24" cy="24" r="14"/></svg><b>醫療</b><span>寬溫、長供貨週期</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#6b4fbb" stroke-width="2"><path d="M6 30c6 6 30 6 36 0M12 30V18h24v12"/><path d="M24 18V8"/></svg><b>航海 / 航空</b><span>高亮度、抗震、特殊尺寸</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#d9931e" stroke-width="2"><circle cx="10" cy="10" r="4"/><circle cx="38" cy="10" r="4"/><circle cx="10" cy="38" r="4"/><circle cx="38" cy="38" r="4"/><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M14 14l4 4M34 14l-4 4M14 34l4-4M34 34l-4-4"/></svg><b>無人機</b><span>遙控器與地面站螢幕</span></div>
+    <div class="icon-tile"><svg viewBox="0 0 48 48" fill="none" stroke="#d9931e" stroke-width="2"><rect x="4" y="8" width="40" height="26" rx="2"/><path d="M16 42h16M24 34v8"/><path d="M12 20c4-4 20-4 24 0"/></svg><b>護眼顯示器</b><span>ECO Vision Display，23.8 吋，Hannspree 品牌歐洲銷售</span></div>
+  </div>
+
+  <h3 class="block">2026 年動態</h3>
+  <div class="htl">
+    <div class="hev" style="border-color:var(--brand)"><div class="y">4/23</div><div class="t">公布 2026 策略</div><div class="d">5.3 代 a-Si 線全產全銷；發展觸控、防窺、低功耗整合；擴大中國與全球車用市場。</div></div>
+    <div class="hev" style="border-color:var(--amber)"><div class="y">4/30</div><div class="t">董事會決議賣南科廠房</div><div class="d">善化區廠房與附屬設施約 2.8 萬坪，以 43.2 億賣給日月光旗下矽品。處分利益約 21.6 億，第三季認列。</div></div>
+    <div class="hev" style="border-color:var(--brand)"><div class="y">5/20</div><div class="t">股東會定調車載</div><div class="d">2027 年車載營收比重目標 3 成以上。新技術：EVD、TDDI、IGD、車載 Mini LED 局部調光、防窺、0.25t 薄玻璃。</div></div>
+    <div class="hev" style="border-color:var(--green)"><div class="y">8 月</div><div class="t">單月營收 9.34 億</div><div class="d">前 8 月累計 78.9 億，年增 2.9%，近三年同期新高。第二季單季 EPS 轉正 0.04 元。</div></div>
+    <div class="hev" style="border-color:var(--red)"><div class="y">9/11</div><div class="t">總經理請辭</div><div class="d">陳盛中 2025 年 11 月上任，任期未滿一年以個人生涯規劃請辭。董事長焦佑麒暫代總經理。</div></div>
+    <div class="hev" style="border-color:var(--red)"><div class="y">9/12–13</div><div class="t">減產與優離傳聞</div><div class="d">媒體報導第四季投片砍至約 5 成、優離 700 到 800 人、約 140 名移工資遣。公司未證實，稱為例行人力調整。</div></div>
+  </div>
+  <p class="note">資料時點：2026 年 9 月 18 日。上述傳聞以公司正式公告為準。</p>
+
+  <h3 class="block">這個網站怎麼用</h3>
+  <div class="grid g4 keep2">
+    <div class="card soft"><h4>02 面板技術</h4><p>點開 LCD 的七層結構，看懂世代線與切割，比較 LCD、OLED、電子紙。</p></div>
+    <div class="card soft"><h4>03 術語庫</h4><p>60 個會在信件、規格書、會議中出現的詞，每個附業務情境。</p></div>
+    <div class="card soft"><h4>04 到 07</h4><p>誰供貨、誰買貨、台灣面板 30 年興衰、彩晶的位置與 2026 年的變局。</p></div>
+    <div class="card soft"><h4>08 業務實務</h4><p>從詢價到停產的流程、規格表怎麼讀、消費品與車載客戶的差別。</p></div>
+  </div>
+</section>
+<!-- ============ 02 面板技術 ============ -->
+<section class="tab" id="tab-tech">
+  <div class="sec-head">
+    <div class="kicker">Display Technology</div>
+    <h2>面板怎麼運作</h2>
+    <p class="lede">LCD 自己不會發光。它是一片可以控制「讓多少光通過」的百葉窗，後面放一盞燈。其餘的技術差異，都是這扇百葉窗怎麼做。</p>
+  </div>
+
+  <h3 class="block">LCD 的七層結構（點選任一層）</h3>
+  <div class="two">
+    <svg id="stack" viewBox="0 0 560 420" style="width:100%;max-width:560px">
+      <defs>
+        <linearGradient id="glow" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff7d6"/><stop offset="1" stop-color="#ffe9a3"/></linearGradient>
+      </defs>
+      <g id="layers"></g>
+      <g font-size="12" fill="#66717f"><text x="20" y="410">光線由下往上：背光 → 偏光 → TFT 開關液晶 → 濾出顏色 → 再偏光 → 觸控與蓋板</text></g>
+    </svg>
+    <div class="info" id="stack-info">
+      <div class="tag">點選左圖</div>
+      <h4>七層，兩個關鍵字</h4>
+      <p>「TFT 陣列」決定製程與成本（a-Si、LTPS、IGZO），「彩色濾光片」決定顏色。彩晶兩者都自己做，彩色濾光片 100% 自製。背光模組、偏光片、驅動 IC 向外採購。</p>
+    </div>
+  </div>
+
+  <h3 class="block">一個像素怎麼變色</h3>
+  <div class="two">
+    <svg viewBox="0 0 560 220" style="width:100%">
+      <g id="px"></g>
+    </svg>
+    <div class="info">
+      <div class="tag">子像素 Sub-pixel</div>
+      <h4>紅綠藍三條，各自調亮度</h4>
+      <p>每個像素由 R、G、B 三個子像素組成。TFT 對每個子像素施加不同電壓，液晶轉動角度不同，通過的光量不同，三色混合出顏色。1280×800 的面板有 307 萬個子像素，每一個都是一顆電晶體。</p>
+      <p style="margin-top:8px">解析度、PPI、色域、對比，都是在描述這件事做得多細、多準。</p>
+    </div>
+  </div>
+
+  <h3 class="block">技術路線一覽</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>技術</th><th>一句話</th><th>強項</th><th>弱項</th><th>常見用途</th><th>與彩晶的關係</th></tr></thead>
+    <tbody>
+      <tr><td class="k">a-Si TFT-LCD</td><td>非晶矽電晶體，最成熟的 LCD</td><td>成本最低、良率高、供應鏈完整</td><td>解析度上限、功耗、邊框</td><td>手機低階、平板、車載、工控</td><td><span class="chip t">主力製程</span></td></tr>
+      <tr><td class="k">LTPS TFT-LCD</td><td>低溫多晶矽，電子跑得快</td><td>高解析度、窄邊框、低功耗</td><td>製程貴、大尺寸不划算</td><td>中高階手機、車載儀表、筆電</td><td>無 LTPS 產線</td></tr>
+      <tr><td class="k">Oxide / IGZO</td><td>氧化物半導體，介於兩者之間</td><td>低漏電、低功耗、可做大片</td><td>穩定性要求高</td><td>平板、筆電、監視器</td><td>無</td></tr>
+      <tr><td class="k">AMOLED</td><td>自發光，不需背光</td><td>薄、黑色純、可彎曲</td><td>燒屏、壽命、價格</td><td>高階手機、穿戴、車載高階</td><td>無，是手機面板最大威脅</td></tr>
+      <tr><td class="k">Mini LED 背光 LCD</td><td>LCD 加上分區調光的 LED 背光</td><td>高對比、高亮度、可靠度</td><td>成本、厚度</td><td>車載、高階筆電、電視</td><td><span class="chip t">車載 Mini LED 局部調光</span></td></tr>
+      <tr><td class="k">Micro LED</td><td>每個像素一顆微型 LED</td><td>亮度、壽命、透明</td><td>巨量轉移良率、成本極高</td><td>穿戴、車載透明、大型牆</td><td>無</td></tr>
+      <tr><td class="k">反射式 LCD / 電子紙</td><td>用環境光，不用背光</td><td>功耗極低、戶外可讀、護眼</td><td>色彩淡、需環境光</td><td>電子標籤、閱讀器、戶外看板</td><td><span class="chip t">EVD 護眼屏、反射式車載</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="block">液晶排列模式：TN、VA、IPS</h3>
+  <div class="grid g3">
+    <div class="card"><svg viewBox="0 0 200 90" style="width:100%"><rect x="60" y="60" width="80" height="12" rx="2" fill="#1b2230"/><path d="M100 60 L55 15 A60 60 0 0 1 145 15 Z" fill="#fbe7e5"/><path d="M100 60 L80 20 A45 45 0 0 1 120 20 Z" fill="#c9463d" opacity=".85"/><text x="100" y="86" text-anchor="middle" font-size="11" fill="#66717f">可視角約 60° 至 70°</text></svg><h4>TN 扭轉向列</h4><p>最便宜、反應最快。側看會變色、上下視角差。工控與電競低價機種仍用。</p></div>
+    <div class="card"><svg viewBox="0 0 200 90" style="width:100%"><rect x="60" y="60" width="80" height="12" rx="2" fill="#1b2230"/><path d="M100 60 L40 25 A70 70 0 0 1 160 25 Z" fill="#fdf2df"/><path d="M100 60 L62 22 A55 55 0 0 1 138 22 Z" fill="#d9931e" opacity=".85"/><text x="100" y="86" text-anchor="middle" font-size="11" fill="#66717f">可視角約 170°</text></svg><h4>VA 垂直配向</h4><p>對比高、黑色深。電視主流。中小尺寸較少見。</p></div>
+    <div class="card"><svg viewBox="0 0 200 90" style="width:100%"><rect x="60" y="60" width="80" height="12" rx="2" fill="#1b2230"/><path d="M100 60 L30 40 A75 75 0 0 1 170 40 Z" fill="#e3f4f1"/><path d="M100 60 L38 38 A65 65 0 0 1 162 38 Z" fill="#0b8a7c" opacity=".85"/><text x="100" y="86" text-anchor="middle" font-size="11" fill="#66717f">可視角 178°，四方向一致</text></svg><h4>IPS 橫向電場</h4><p>各角度色彩一致，觸控按壓不泛白。車載與平板主流。彩晶稱自家版本為 IPS Pro。</p></div>
+  </div>
+
+  <h3 class="block">世代線與切割：一片玻璃能切幾片</h3>
+  <p class="note" style="margin-bottom:12px">世代（Generation）只跟玻璃基板尺寸有關，跟技術新舊無關。越大的玻璃切大尺寸越划算，但切小尺寸不一定有優勢，因為邊角浪費與製程時間。</p>
+  <div class="two">
+    <div>
+      <div class="toggle" id="gen-pick">
+        <button data-g="3.5" data-w="600" data-h="720">G3.5</button>
+        <button data-g="5.3" data-w="1200" data-h="1300" class="on">G5.3 彩晶</button>
+        <button data-g="6" data-w="1500" data-h="1850">G6</button>
+        <button data-g="8.5" data-w="2200" data-h="2500">G8.5</button>
+        <button data-g="8.6" data-w="2250" data-h="2600">G8.6</button>
+        <button data-g="10.5" data-w="2940" data-h="3370">G10.5</button>
+      </div>
+      <div class="toggle" id="size-pick" style="margin-top:8px">
+        <button data-d="7" data-r="1.6" class="on">7 吋平板</button>
+        <button data-d="10.1" data-r="1.6">10.1 吋</button>
+        <button data-d="12.3" data-r="2.667">12.3 吋車載</button>
+        <button data-d="15.6" data-r="1.778">15.6 吋筆電</button>
+        <button data-d="27" data-r="1.778">27 吋</button>
+        <button data-d="55" data-r="1.778">55 吋電視</button>
+      </div>
+      <svg id="gen-svg" viewBox="0 0 420 420" style="width:100%;max-width:420px;margin-top:12px"></svg>
+    </div>
+    <div class="info" id="gen-info"></div>
+  </div>
+  <div class="tbl" style="margin-top:16px"><table>
+    <thead><tr><th>世代</th><th>玻璃基板 (mm)</th><th>面積比 (以 G5.3 為 1)</th><th>代表廠</th></tr></thead>
+    <tbody>
+      <tr><td class="k">G3.5</td><td>600 × 720</td><td>0.28</td><td>早期台廠、日本舊線（多已關閉）</td></tr>
+      <tr><td class="k">G5 / G5.3</td><td>1100 × 1300 / 1200 × 1300</td><td>1</td><td>彩晶南科、群創、京東方舊線</td></tr>
+      <tr><td class="k">G6</td><td>1500 × 1850</td><td>1.8</td><td>LTPS 與 OLED 主流世代（天馬、京東方、JDI）</td></tr>
+      <tr><td class="k">G8.5 / 8.6</td><td>2200 × 2500 / 2250 × 2600</td><td>3.5 至 3.8</td><td>惠科、華星、京東方，8.6 代線也開始切手機 a-Si 面板</td></tr>
+      <tr><td class="k">G10.5</td><td>2940 × 3370</td><td>6.4</td><td>京東方、華星，65 吋以上電視</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn" style="margin-top:14px"><b>為什麼這件事對彩晶重要：</b>中國 8.6 代線切小尺寸 a-Si 面板，單片成本比 5 代線低。5 代線的競爭力只剩靈活切割、少量多樣、特殊規格。這是集邦等機構說「小世代 LCD 產線面臨加速收斂壓力」的原因。</div>
+
+  <h3 class="block">觸控怎麼整合進面板</h3>
+  <div class="grid g3">
+    <div class="card"><svg viewBox="0 0 220 120" style="width:100%"><rect x="20" y="10" width="180" height="14" rx="2" fill="#cfd8e3"/><text x="110" y="21" text-anchor="middle" font-size="9" fill="#1b2230">蓋板玻璃</text><rect x="20" y="30" width="180" height="14" rx="2" fill="#6b4fbb" opacity=".7"/><text x="110" y="41" text-anchor="middle" font-size="9" fill="#fff">獨立觸控感測層</text><rect x="20" y="50" width="180" height="8" fill="#eee"/><text x="110" y="57" text-anchor="middle" font-size="7" fill="#66717f">空氣層或光學膠</text><rect x="20" y="64" width="180" height="40" rx="2" fill="#0f5fa8" opacity=".75"/><text x="110" y="88" text-anchor="middle" font-size="9" fill="#fff">LCD 面板</text></svg><h4>外掛式 Out-cell（GFF / OGS）</h4><p>觸控是另一片零件，貼在面板上。彈性大、厚、成本多一層。</p></div>
+    <div class="card"><svg viewBox="0 0 220 120" style="width:100%"><rect x="20" y="20" width="180" height="14" rx="2" fill="#cfd8e3"/><text x="110" y="31" text-anchor="middle" font-size="9" fill="#1b2230">蓋板玻璃</text><rect x="20" y="40" width="180" height="10" rx="2" fill="#6b4fbb" opacity=".7"/><text x="110" y="48" text-anchor="middle" font-size="8" fill="#fff">觸控層做在 CF 玻璃外側</text><rect x="20" y="50" width="180" height="40" rx="2" fill="#0f5fa8" opacity=".75"/><text x="110" y="74" text-anchor="middle" font-size="9" fill="#fff">LCD 面板</text></svg><h4>On-cell</h4><p>觸控層直接鍍在面板上層玻璃外側。少一片玻璃，更薄。</p></div>
+    <div class="card"><svg viewBox="0 0 220 120" style="width:100%"><rect x="20" y="20" width="180" height="14" rx="2" fill="#cfd8e3"/><text x="110" y="31" text-anchor="middle" font-size="9" fill="#1b2230">蓋板玻璃</text><rect x="20" y="40" width="180" height="50" rx="2" fill="#0f5fa8" opacity=".75"/><rect x="30" y="62" width="160" height="8" rx="1" fill="#6b4fbb"/><text x="110" y="56" text-anchor="middle" font-size="9" fill="#fff">LCD 面板</text><text x="110" y="82" text-anchor="middle" font-size="8" fill="#fff">觸控感測與 TFT 同層</text></svg><h4>In-cell / TDDI</h4><p>觸控做進 TFT 陣列，驅動與觸控合為一顆 IC（TDDI）。最薄、最便宜、良率靠面板廠。彩晶在穿戴與手機面板採用。</p></div>
+  </div>
+
+  <h3 class="block">出貨型態：Open Cell 與 LCM</h3>
+  <div class="vs">
+    <div class="card"><h4>Open Cell 裸面板</h4><p>只有 TFT 玻璃 + 液晶 + 彩色濾光片 + 偏光片。客戶自行組背光與驅動板。單價低，客戶多是有模組能力的大廠或模組廠。</p></div>
+    <div class="x">vs</div>
+    <div class="card"><h4>LCM 液晶模組</h4><p>Open cell + 背光模組 + 驅動 IC + 軟板，可直接裝進機器。單價高，客戶多是品牌、系統廠、車用 Tier 1。彩晶南京廠與南科模組線負責後段。</p></div>
+  </div>
+  <p class="note" style="margin-top:10px">再往上一層：LCM + 觸控 + 蓋板 + 光學貼合，就是「觸控顯示模組」。車載案子多半要到這一層。</p>
+</section>
+<!-- ============ 03 術語庫 ============ -->
+<section class="tab" id="tab-terms">
+  <div class="sec-head">
+    <div class="kicker">Glossary</div>
+    <h2>術語庫</h2>
+    <p class="lede">會出現在規格書、報價單、客戶信件裡的詞。點一張卡片，展開業務情境。</p>
+  </div>
+  <input class="search" id="term-search" placeholder="搜尋：nits、TDDI、EOL、稼動率…">
+  <div class="filters" id="term-filters">
+    <button data-c="all" class="on">全部</button>
+    <button data-c="spec">規格與光學</button>
+    <button data-c="proc">結構與製程</button>
+    <button data-c="touch">觸控與介面</button>
+    <button data-c="auto">車載與工控</button>
+    <button data-c="biz">商務與交易</button>
+  </div>
+  <div class="gl" id="term-list"></div>
+</section>
+
+<!-- ============ 04 產業鏈 ============ -->
+<section class="tab" id="tab-chain">
+  <div class="sec-head">
+    <div class="kicker">Supply Chain</div>
+    <h2>誰供貨，誰買貨</h2>
+    <p class="lede">面板廠在中間。上游是材料與 IC，多半是日、韓、台的少數大廠。下游從品牌到車廠，決定價格的往往是他們。</p>
+  </div>
+
+  <svg viewBox="0 0 1100 330" style="width:100%">
+    <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9aa5b4"/></marker></defs>
+    <g font-size="12">
+      <rect x="10" y="20" width="330" height="290" rx="14" fill="#f4f6f9"/>
+      <text x="30" y="48" font-size="15" font-weight="700" fill="#1b2230">上游：材料與零組件</text>
+      <g fill="#1b2230">
+        <rect x="30" y="64" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="40" y="83" font-weight="700">玻璃基板</text><text x="40" y="100" fill="#66717f">康寧、旭硝子、電氣硝子</text>
+        <rect x="185" y="64" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="195" y="83" font-weight="700">偏光片</text><text x="195" y="100" fill="#66717f">日東、住友、LG化學、杉金</text>
+        <rect x="30" y="120" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="40" y="139" font-weight="700">驅動 IC / TDDI</text><text x="40" y="156" fill="#66717f">聯詠、奇景、瑞鼎、敦泰</text>
+        <rect x="185" y="120" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="195" y="139" font-weight="700">背光模組 / LED</text><text x="195" y="156" fill="#66717f">瑞儀、中光電、億光</text>
+        <rect x="30" y="176" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="40" y="195" font-weight="700">液晶材料</text><text x="40" y="212" fill="#66717f">默克、JNC、DIC</text>
+        <rect x="185" y="176" width="145" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="195" y="195" font-weight="700">彩色濾光片</text><text x="195" y="212" fill="#66717f">多數面板廠自製</text>
+        <rect x="30" y="232" width="300" height="46" rx="8" fill="#fff" stroke="#e4e8ee"/><text x="40" y="251" font-weight="700">設備與化學品</text><text x="40" y="268" fill="#66717f">曝光機、蝕刻、光阻、靶材；日本與台灣廠為主</text>
+      </g>
+      <path d="M345 165 L395 165" stroke="#9aa5b4" stroke-width="2" marker-end="url(#arr)"/>
+      <rect x="400" y="20" width="300" height="290" rx="14" fill="#e6f0fb"/>
+      <text x="420" y="48" font-size="15" font-weight="700" fill="#0f5fa8">中游：面板廠</text>
+      <g fill="#1b2230">
+        <rect x="420" y="64" width="260" height="70" rx="8" fill="#fff" stroke="#c7dcf3"/><text x="432" y="84" font-weight="700">前段 Array / Cell</text><text x="432" y="102" fill="#66717f">TFT 陣列、彩色濾光片、灌液晶、切割</text><text x="432" y="120" fill="#66717f">資本密集，一條線數百億</text>
+        <rect x="420" y="144" width="260" height="70" rx="8" fill="#fff" stroke="#c7dcf3"/><text x="432" y="164" font-weight="700">後段 Module (LCM)</text><text x="432" y="182" fill="#66717f">貼偏光片、接 IC、裝背光、觸控貼合</text><text x="432" y="200" fill="#66717f">勞力密集，多設在中國或東南亞</text>
+        <rect x="420" y="224" width="260" height="70" rx="8" fill="#fff" stroke="#c7dcf3"/><text x="432" y="244" font-weight="700">台灣：友達、群創、彩晶、凌巨、元太</text><text x="432" y="262" fill="#66717f">中國：京東方、華星、惠科、天馬</text><text x="432" y="280" fill="#66717f">日韓：JDI、夏普、三星顯示、LG 顯示</text>
+      </g>
+      <path d="M705 165 L755 165" stroke="#9aa5b4" stroke-width="2" marker-end="url(#arr)"/>
+      <rect x="760" y="20" width="330" height="290" rx="14" fill="#e3f4f1"/>
+      <text x="780" y="48" font-size="15" font-weight="700" fill="#0b8a7c">下游：客戶</text>
+      <g fill="#1b2230">
+        <rect x="780" y="64" width="290" height="46" rx="8" fill="#fff" stroke="#bfe3dc"/><text x="792" y="83" font-weight="700">品牌與 ODM</text><text x="792" y="100" fill="#66717f">手機、平板品牌；仁寶、緯創等代工廠</text>
+        <rect x="780" y="120" width="290" height="46" rx="8" fill="#fff" stroke="#bfe3dc"/><text x="792" y="139" font-weight="700">車用 Tier 1</text><text x="792" y="156" fill="#66717f">電裝、大陸集團、博世、德賽西威、佛吉亞</text>
+        <rect x="780" y="176" width="290" height="46" rx="8" fill="#fff" stroke="#bfe3dc"/><text x="792" y="195" font-weight="700">工控與醫療設備商</text><text x="792" y="212" fill="#66717f">研華、樺漢；醫療與海事設備商</text>
+        <rect x="780" y="232" width="290" height="46" rx="8" fill="#fff" stroke="#bfe3dc"/><text x="792" y="251" font-weight="700">模組廠、代理商、白牌</text><text x="792" y="268" fill="#66717f">深圳模組廠、亞洲與歐洲代理商</text>
+      </g>
+    </g>
+  </svg>
+
+  <h3 class="block">一片面板的成本長什麼樣</h3>
+  <div class="two">
+    <svg id="cost-pie" viewBox="0 0 320 320" style="width:100%;max-width:320px"></svg>
+    <div>
+      <div class="info">
+        <div class="tag">示意比例（中小尺寸 a-Si 模組）</div>
+        <h4>材料佔六到七成，折舊佔兩到三成</h4>
+        <p>材料裡最大的是背光模組、驅動 IC、偏光片。面板廠自己能控制的是良率、稼動率與彩色濾光片。稼動率低，折舊照攤，這就是虧損的來源。</p>
+      </div>
+      <div class="legend" id="cost-legend"></div>
+      <p class="note" style="margin-top:8px">比例依產品差異很大，車載與觸控模組的背光與貼合成本更高。</p>
+    </div>
+  </div>
+
+  <h3 class="block">面板價格的循環：液晶循環</h3>
+  <div class="two">
+    <svg viewBox="0 0 560 240" style="width:100%">
+      <path d="M20 200 C80 200 90 60 150 60 S220 200 280 200 S350 60 410 60 S480 200 540 200" fill="none" stroke="#0f5fa8" stroke-width="3"/>
+      <g font-size="12" fill="#66717f">
+        <text x="150" y="45" text-anchor="middle" font-weight="700" fill="#2f9a5d">缺貨漲價</text>
+        <text x="150" y="30" text-anchor="middle">全業獲利、宣布擴產</text>
+        <text x="280" y="225" text-anchor="middle" font-weight="700" fill="#c9463d">供過於求</text>
+        <text x="280" y="238" text-anchor="middle" font-size="11">新產能開出、價跌、減產、賣廠</text>
+        <text x="410" y="45" text-anchor="middle" font-weight="700" fill="#2f9a5d">需求回升</text>
+        <text x="410" y="30" text-anchor="middle">庫存去化完、價格反彈</text>
+      </g>
+      <g font-size="11" fill="#1b2230">
+        <circle cx="150" cy="60" r="5" fill="#2f9a5d"/><text x="160" y="80">2020–2021 疫情遠距需求</text>
+        <circle cx="280" cy="200" r="5" fill="#c9463d"/><text x="290" y="190">2022–2023 需求反轉</text>
+        <circle cx="410" cy="60" r="5" fill="#2f9a5d"/><text x="420" y="80">2024–2025 溫和回升</text>
+      </g>
+    </svg>
+    <div class="info">
+      <div class="tag">Crystal Cycle</div>
+      <h4>兩到四年一個週期</h4>
+      <p>產線蓋兩到三年，需求變化只要幾個月。所有廠商在好光景時同時擴產，產能一起開出時價格崩跌。中小尺寸面板的振幅比電視面板小，但方向一致。</p>
+      <p style="margin-top:8px">客戶談價會拿 TrendForce（WitsView）、Omdia 每月公布的報價當基準。業務要知道自己產品在報價表上的參考位置。</p>
+    </div>
+  </div>
+
+  <h3 class="block">2026 年的市場份額</h3>
+  <div class="grid g3">
+    <div class="stat"><div class="v">≈70%</div><div class="l">中國廠佔全球手機面板出貨（2024 年 69.8%，2025 年估超過 70%）</div></div>
+    <div class="stat"><div class="v">9%</div><div class="l">友達、群創各佔全球 LCD 產能（2026 年集邦估計）</div></div>
+    <div class="stat"><div class="v">75%</div><div class="l">中國 LCD 產能佔比（2028 年預估），台灣降至 16%，日韓個位數</div></div>
+  </div>
+  <div class="tbl" style="margin-top:16px"><table>
+    <thead><tr><th>手機面板出貨（2024）</th><th>數量</th><th>主力技術</th><th>對彩晶的意義</th></tr></thead>
+    <tbody>
+      <tr><td class="k">京東方 BOE</td><td>6.13 億片</td><td>a-Si、LTPS、AMOLED 全線</td><td>規模是彩晶的數十倍，也搶 iPhone 供應鏈</td></tr>
+      <tr><td class="k">惠科 HKC</td><td>2.28 億片</td><td>a-Si，8.6 代線</td><td>低階 a-Si 手機面板的價格殺手</td></tr>
+      <tr><td class="k">華星 CSOT</td><td>2.15 億片</td><td>a-Si、LTPS、AMOLED</td><td>2025 年加入 a-Si 手機面板競爭，綁小米</td></tr>
+      <tr><td class="k">天馬 Tianma</td><td>1.58 億片</td><td>LTPS、AMOLED，車載強</td><td>車載面板全球前幾名，是車載市場的直接對手</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<!-- ============ 05 台灣面板史 ============ -->
+<section class="tab" id="tab-history">
+  <div class="sec-head">
+    <div class="kicker">History</div>
+    <h2>台灣面板 30 年</h2>
+    <p class="lede">從日本技轉起家，十年內衝到全球第一，再被韓國與中國先後超越。今天的台灣面板廠，一家賣廠轉型、一家做電子紙、一家做小尺寸利基。</p>
+  </div>
+
+  <h3 class="block">全球產能重心怎麼移動（示意）</h3>
+  <svg id="share-svg" viewBox="0 0 900 278" style="width:100%"></svg>
+  <div class="legend"><span><i style="background:#c9463d"></i>日本</span><span><i style="background:#6b4fbb"></i>韓國</span><span><i style="background:#0f5fa8"></i>台灣</span><span><i style="background:#d9931e"></i>中國</span></div>
+  <p class="note">各年為 LCD 面積產能的約略佔比，用於顯示趨勢。2026 年後為研究機構預估。</p>
+
+  <h3 class="block">六個時代</h3>
+  <div class="era">
+    <span style="background:#6b4fbb">1990–1999 技轉萌芽</span>
+    <span style="background:#0f5fa8">2000–2006 五虎爭鳴</span>
+    <span style="background:#0b8a7c">2007–2012 整併與海嘯</span>
+    <span style="background:#d9931e">2013–2019 中國崛起</span>
+    <span style="background:#2f9a5d">2020–2022 疫情紅利</span>
+    <span style="background:#c9463d">2023–2026 收斂與轉型</span>
+  </div>
+  <div class="htl">
+    <div class="hev" style="border-color:#6b4fbb"><div class="y">1990</div><div class="t">聯友光電成立</div><div class="d">台灣最早投入 TFT-LCD 的公司，聯電集團。1992 年元太科技成立。</div></div>
+    <div class="hev" style="border-color:#6b4fbb"><div class="y">1996–97</div><div class="t">達碁、奇美電、華映投入</div><div class="d">明基成立達碁（IBM 日本技術）。奇美實業成立奇美電子（富士通技術）。華映以三菱技術轉做 TFT。</div></div>
+    <div class="hev" style="border-color:#6b4fbb"><div class="y">1998</div><div class="t">瀚宇彩晶成立</div><div class="d">華新麗華集團投資，東芝與日立技轉。同期政府大力推動，銀行聯貸湧入。</div></div>
+    <div class="hev" style="border-color:#6b4fbb"><div class="y">1999</div><div class="t">統寶、廣輝成立</div><div class="d">仁寶集團成立統寶，廣達集團成立廣輝（夏普技術）。台灣一口氣有七家 TFT 廠。</div></div>
+    <div class="hev" style="border-color:#0f5fa8"><div class="y">2001</div><div class="t">聯友 + 達碁 = 友達</div><div class="d">台灣面板史第一樁大合併。同年網路泡沫，面板價格首度崩跌。</div></div>
+    <div class="hev" style="border-color:#0f5fa8"><div class="y">2002</div><div class="t">「面板五虎」成形</div><div class="d">友達、奇美電、廣輝、華映、彩晶。彩晶南科五代廠投產，是台灣最早的五代線之一。</div></div>
+    <div class="hev" style="border-color:#0f5fa8"><div class="y">2003–04</div><div class="t">群創成立、彩晶上市</div><div class="d">鴻海支持段行建成立群創。彩晶 2004 年 9 月掛牌。台灣大尺寸面板產能超越日本。</div></div>
+    <div class="hev" style="border-color:#0f5fa8"><div class="y">2006</div><div class="t">友達併廣輝</div><div class="d">友達躍居全球前三。群創取代廣輝成為新五虎。台灣產值破兆。</div></div>
+    <div class="hev" style="border-color:#0b8a7c"><div class="y">2008</div><div class="t">金融海嘯</div><div class="d">面板價格腰斬，全業虧損。彩晶自此逐步退出大尺寸，轉往中小尺寸。</div></div>
+    <div class="hev" style="border-color:#0b8a7c"><div class="y">2010</div><div class="t">群創 + 奇美電 + 統寶</div><div class="d">三合一成新奇美電，產能超越友達。同年歐盟裁罰 LCD 價格壟斷 6.49 億歐元，彩晶被罰 810 萬歐元。</div></div>
+    <div class="hev" style="border-color:#0b8a7c"><div class="y">2012</div><div class="t">新奇美更名群創</div><div class="d">五虎變雙虎。韓國三星、LG 以 8 代線與品牌垂直整合稱霸。</div></div>
+    <div class="hev" style="border-color:#d9931e"><div class="y">2013–16</div><div class="t">中國大擴產</div><div class="d">京東方、華星在政府補貼下狂建 8.5 代線。中國白牌平板需求爆發，彩晶 7 吋面板一度受惠。</div></div>
+    <div class="hev" style="border-color:#d9931e"><div class="y">2017</div><div class="t">中國 LCD 產能超越韓國</div><div class="d">京東方成為全球最大 LCD 廠。10.5 代線開出，電視面板價格長期下行。</div></div>
+    <div class="hev" style="border-color:#d9931e"><div class="y">2019</div><div class="t">華映聲請破產、彩晶回台建模組線</div><div class="d">華映負債 418 億，2022 年法院裁定破產。彩晶因中美貿易戰在南科新建車載模組線。</div></div>
+    <div class="hev" style="border-color:#2f9a5d"><div class="y">2020–21</div><div class="t">疫情紅利</div><div class="d">遠距工作與教學推升需求，面板漲價一年多。彩晶 2020 年營收 195.5 億、EPS 1.25，2021 年再創高。三星、LG 宣布退出 LCD。</div></div>
+    <div class="hev" style="border-color:#2f9a5d"><div class="y">2022</div><div class="t">需求反轉</div><div class="d">通膨與庫存壓力，面板價格重挫。彩晶轉虧，EPS -0.86。</div></div>
+    <div class="hev" style="border-color:#c9463d"><div class="y">2023–24</div><div class="t">減產去庫存</div><div class="d">全業減產保價。中國廠以 8.6 代線切入小尺寸 a-Si，五代線壓力加劇。彩晶 2024 年 EPS -1.86。</div></div>
+    <div class="hev" style="border-color:#c9463d"><div class="y">2025–26</div><div class="t">賣廠與轉型</div><div class="d">群創賣廠給台積電等，前四月處分利益近 200 億；友達推矽光子。彩晶 2026 年賣南科廠房給矽品。中國四大廠拿下七成電視面板出貨。</div></div>
+  </div>
+
+  <h3 class="block">七家變三家：合併與退場</h3>
+  <svg id="tree-svg" viewBox="0 0 1000 380" style="width:100%"></svg>
+  <p class="note">友達、群創仍是「面板雙虎」，但兩家都在賣舊廠、跨入半導體封裝。元太專做電子紙。彩晶與凌巨守中小尺寸。</p>
+
+  <h3 class="block">為什麼台灣面板業會走到這裡</h3>
+  <div class="grid g4 keep2">
+    <div class="card"><h4>沒有品牌</h4><p>三星、LG 有自家電視與手機吃產能。中國廠有海信、TCL、小米。台廠只能賣給別人的品牌。</p></div>
+    <div class="card"><h4>補貼落差</h4><p>中國地方政府出地、出資、補貼電費。一條 10.5 代線超過千億，台廠無法跟進。</p></div>
+    <div class="card"><h4>世代落後</h4><p>台灣最大是 8.5 代線，中國有多條 10.5 代與 8.6 代。大尺寸成本輸，小尺寸也被 8.6 代線切入。</p></div>
+    <div class="card"><h4>景氣同步</h4><p>所有廠在好光景同時擴產，價格崩跌時一起虧。沒有品牌與補貼的廠最先退場。</p></div>
+  </div>
+</section>
+<!-- ============ 06 彩晶解析 ============ -->
+<section class="tab" id="tab-hannstar">
+  <div class="sec-head">
+    <div class="kicker">HannStar Display</div>
+    <h2>彩晶解析</h2>
+    <p class="lede">五虎中唯一沒有被合併、也沒有倒閉的一家。靠著早早退出大尺寸、專做中小尺寸活到現在。現在的問題是：5 代線還能做什麼。</p>
+  </div>
+
+  <div class="grid g4 keep2">
+    <div class="stat"><div class="v">6116</div><div class="l">台灣證交所代號，2004 年上市</div></div>
+    <div class="stat"><div class="v">285.9<small>億</small></div><div class="l">資本額（新台幣）</div></div>
+    <div class="stat"><div class="v">≈2,800</div><div class="l">員工數（2026 年精簡前）</div></div>
+    <div class="stat"><div class="v">內湖</div><div class="l">總部台北市內湖區；廠區在台南善化南科、南京</div></div>
+  </div>
+
+  <h3 class="block">集團與關係企業</h3>
+  <svg viewBox="0 0 1000 300" style="width:100%">
+    <g font-size="13">
+      <rect x="380" y="16" width="240" height="60" rx="12" fill="#1b2230"/>
+      <text x="500" y="41" text-anchor="middle" fill="#fff" font-weight="700" font-size="15">華新麗華集團</text>
+      <text x="500" y="62" text-anchor="middle" fill="#cfd8e3" font-size="12">焦廷標創辦；電線電纜、不鏽鋼、電子</text>
+      <path d="M500 76 V110" stroke="#9aa5b4" stroke-width="2"/>
+      <path d="M140 110 H860" stroke="#9aa5b4" stroke-width="2"/>
+      <g>
+        <path d="M140 110 V130" stroke="#9aa5b4" stroke-width="2"/>
+        <rect x="40" y="130" width="200" height="70" rx="12" fill="#f4f6f9"/>
+        <text x="140" y="155" text-anchor="middle" font-weight="700">華新麗華 1605</text>
+        <text x="140" y="175" text-anchor="middle" fill="#66717f" font-size="12">焦佑倫。集團母體</text>
+      </g>
+      <g>
+        <path d="M380 110 V130" stroke="#9aa5b4" stroke-width="2"/>
+        <rect x="270" y="130" width="220" height="70" rx="12" fill="#f4f6f9"/>
+        <text x="380" y="155" text-anchor="middle" font-weight="700">華邦電子 2344</text>
+        <text x="380" y="175" text-anchor="middle" fill="#66717f" font-size="12">焦佑鈞。記憶體與晶圓代工</text>
+      </g>
+      <g>
+        <path d="M620 110 V130" stroke="#0f5fa8" stroke-width="3"/>
+        <rect x="510" y="130" width="220" height="70" rx="12" fill="#e6f0fb" stroke="#0f5fa8" stroke-width="2"/>
+        <text x="620" y="155" text-anchor="middle" font-weight="900" fill="#0f5fa8">瀚宇彩晶 6116</text>
+        <text x="620" y="175" text-anchor="middle" fill="#66717f" font-size="12">焦佑麒董事長兼執行長。面板</text>
+      </g>
+      <g>
+        <path d="M860 110 V130" stroke="#9aa5b4" stroke-width="2"/>
+        <rect x="750" y="130" width="220" height="70" rx="12" fill="#f4f6f9"/>
+        <text x="860" y="155" text-anchor="middle" font-weight="700">瀚宇博德 5469</text>
+        <text x="860" y="175" text-anchor="middle" fill="#66717f" font-size="12">焦佑麒。印刷電路板，獲利穩定</text>
+      </g>
+      <path d="M620 200 V225 M480 225 H760" stroke="#0f5fa8" stroke-width="2"/>
+      <g font-size="12">
+        <path d="M480 225 V240" stroke="#0f5fa8" stroke-width="2"/><rect x="400" y="240" width="160" height="50" rx="10" fill="#fff" stroke="#c7dcf3"/><text x="480" y="260" text-anchor="middle" font-weight="700">南京瀚宇彩欣</text><text x="480" y="278" text-anchor="middle" fill="#66717f">LCM 模組與觸控廠</text>
+        <path d="M620 225 V240" stroke="#0f5fa8" stroke-width="2"/><rect x="570" y="240" width="130" height="50" rx="10" fill="#fff" stroke="#c7dcf3"/><text x="635" y="260" text-anchor="middle" font-weight="700">Hannspree 瀚斯寶麗</text><text x="635" y="278" text-anchor="middle" fill="#66717f">品牌，2002 年起，總部荷蘭</text>
+        <path d="M760 225 V240" stroke="#0f5fa8" stroke-width="2"/><rect x="710" y="240" width="130" height="50" rx="10" fill="#fff" stroke="#c7dcf3"/><text x="775" y="260" text-anchor="middle" font-weight="700">HannsG 瀚視奇</text><text x="775" y="278" text-anchor="middle" fill="#66717f">顯示器品牌，歐洲通路</text>
+      </g>
+    </g>
+  </svg>
+  <p class="note">焦家四兄弟分掌集團事業。彩晶董事長焦佑麒同時是瀚宇博德董事長。焦家透過華新麗華與投資公司交叉持股，對彩晶有絕對控制權。</p>
+
+  <h3 class="block">公司大事記</h3>
+  <div class="two">
+    <div class="tl">
+      <div class="ev"><div class="y">1998</div><div class="t">成立</div><div class="d">華新麗華投資，東芝與日立技轉。初期做筆電與監視器面板。</div></div>
+      <div class="ev"><div class="y">2002</div><div class="t">南科五代廠投產、創立 Hannspree</div><div class="d">台灣最早的五代線之一。同年成立自有品牌，總部荷蘭，設計中心台北。</div></div>
+      <div class="ev"><div class="y">2004</div><div class="t">上市</div><div class="d">9 月在台灣證交所掛牌。主要客戶為惠普、宏碁、東芝、戴爾、索尼。</div></div>
+      <div class="ev amber"><div class="y">2008–11</div><div class="t">退出大尺寸</div><div class="d">金融海嘯後不再追大世代線，轉做中小尺寸。減資彌補虧損。</div></div>
+      <div class="ev red"><div class="y">2010</div><div class="t">歐盟反壟斷罰款</div><div class="d">LCD 價格卡特爾案，彩晶被罰 810 萬歐元。</div></div>
+      <div class="ev"><div class="y">2013–16</div><div class="t">白牌平板時代</div><div class="d">7 吋、10.1 吋面板供應中國白牌平板，手機面板比重一度超過七成。</div></div>
+      <div class="ev green"><div class="y">2019</div><div class="t">回台建車載模組線</div><div class="d">中美貿易戰下分散製造。日系車用客戶放量，歐洲客戶小量出貨。手機比重降至五成以下。</div></div>
+      <div class="ev green"><div class="y">2020–21</div><div class="t">疫情高峰</div><div class="d">2020 年營收 195.5 億、淨利 38.5 億、EPS 1.25。2021 年第二季單季 EPS 0.91。</div></div>
+      <div class="ev red"><div class="y">2022–25</div><div class="t">連續四年虧損</div><div class="d">EPS 依序約 -0.86、-0.5、-1.86、-0.75。2024 年上半年資遣 180 人。</div></div>
+      <div class="ev amber"><div class="y">2025.11</div><div class="t">陳盛中接任總經理</div><div class="d">12 月法說會定調：2026 年工控與車載佔比站穩五成以上。</div></div>
+      <div class="ev red"><div class="y">2026.4–9</div><div class="t">賣廠、總座請辭、減產傳聞</div><div class="d">43.2 億賣南科廠房給矽品。9 月 11 日總經理請辭，董事長暫代。媒體報導第四季投片砍半、優離 700 到 800 人。</div></div>
+    </div>
+    <div>
+      <div class="info" style="margin-bottom:16px">
+        <div class="tag">解讀</div>
+        <h4>活得比同業久，代價是規模最小</h4>
+        <p>彩晶沒有跟進 6 代以上的軍備競賽，所以沒有被合併、沒有倒閉。但也因此只有一條 5.3 代線，產能約是京東方單一 8.6 代廠的零頭。它的生存方式是找大廠不願意做的小量、特殊、長週期案子。</p>
+      </div>
+      <div class="info">
+        <div class="tag">南科廠房出售的意義</div>
+        <h4>賣的是不動產，產線去留未公告</h4>
+        <p>4 月公告賣的是善化區廠房與附屬設施約 2.8 萬坪。公告未提及租回安排或產線搬遷。9 月的減產與人力精簡傳聞，與此連在一起被市場解讀。以公司正式公告為準。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="block">財務軌跡</h3>
+  <div class="toggle" id="fin-pick"><button data-k="rev" class="on">營收（億元）</button><button data-k="eps">每股盈餘（元）</button></div>
+  <svg id="fin-svg" viewBox="0 0 900 300" style="width:100%;margin-top:10px"></svg>
+  <p class="note" id="fin-note"></p>
+
+  <h3 class="block">產品組合的搬家</h3>
+  <div class="two">
+    <div>
+      <div class="toggle" id="mix-pick"><button data-k="2019" >2019 年前</button><button data-k="2025" class="on">2025 前三季</button><button data-k="2026">2026 目標</button><button data-k="2027">2027 目標</button></div>
+      <svg id="mix-svg" viewBox="0 0 360 300" style="width:100%;max-width:360px;margin-top:10px"></svg>
+    </div>
+    <div class="info" id="mix-info"></div>
+  </div>
+
+  <h3 class="block">核心技術與產品線</h3>
+  <div class="grid g3">
+    <div class="card"><span class="chip t">觸控</span><h4 style="margin-top:8px">TDDI In-cell</h4><p>觸控與驅動整合成一顆 IC，做進 TFT 層。穿戴面板採用 TDDI 為全球首發。</p></div>
+    <div class="card"><span class="chip t">邊框</span><h4 style="margin-top:8px">IGD 閘極驅動整合</h4><p>把 gate driver 電路做在玻璃上，減少 IC 數量與邊框寬度。</p></div>
+    <div class="card"><span class="chip t">視角</span><h4 style="margin-top:8px">IPS Pro</h4><p>自家廣視角技術，車載與平板主力。</p></div>
+    <div class="card"><span class="chip g">護眼</span><h4 style="margin-top:8px">ECO Vision Display（EVD）</h4><p>反射式或低功耗設計的護眼屏，訴求低藍光、低耗電。23.8 吋顯示器 2026 年第一季由 Hannspree 在歐洲販售。</p></div>
+    <div class="card"><span class="chip g">薄</span><h4 style="margin-top:8px">0.25t 超薄玻璃</h4><p>玻璃基板薄化到 0.25 mm，用於穿戴與輕薄模組，也發展軟性防窺面板。</p></div>
+    <div class="card"><span class="chip a">車載</span><h4 style="margin-top:8px">Mini LED 局部調光、防窺、HUD</h4><p>車載 Mini LED 背光分區調光提升對比；乘客屏防窺；HUD 與數位後視鏡為新案源。</p></div>
+    <div class="card"><span class="chip b">製造</span><h4 style="margin-top:8px">彩色濾光片 100% 自製</h4><p>少一道外購，成本與交期自己掌握。</p></div>
+    <div class="card"><span class="chip b">模組</span><h4 style="margin-top:8px">車用模組全自動線</h4><p>南科車載模組線 2019 年建，2026 年目標優化為全自動產線。</p></div>
+    <div class="card"><span class="chip v">材料</span><h4 style="margin-top:8px">防眩片等材料型產品</h4><p>2026 年預估佔營收 5% 到 7%。</p></div>
+  </div>
+
+  <h3 class="block">在市場上的位置</h3>
+  <svg id="pos-svg" viewBox="0 0 900 420" style="width:100%"></svg>
+  <p class="note">橫軸為主要製程與技術層級，縱軸為出貨規模（示意）。彩晶在左下：a-Si、小量。生存空間是右下方向的特殊應用，而不是往上跟規模比。</p>
+
+  <h3 class="block">SWOT</h3>
+  <div class="swot">
+    <div class="q" style="background:var(--green-soft)"><h4 style="color:var(--green)">優勢</h4><ul><li>中小尺寸 a-Si 二十年經驗，少量多樣的彈性</li><li>彩色濾光片自製，前後段一條龍到觸控模組</li><li>車載已進入日系與歐系供應鏈，中國車廠訂單穩定</li><li>集團背景，資產活化有籌碼（廠房、土地）</li></ul></div>
+    <div class="q" style="background:var(--red-soft)"><h4 style="color:var(--red)">劣勢</h4><ul><li>只有一條 5.3 代線，單片成本輸 8.6 代線</li><li>沒有 LTPS、OLED，高解析度案子接不到</li><li>連續四年虧損，2026 上半年毛利為負</li><li>人力與管理層動盪，客戶會擔心供貨延續性</li></ul></div>
+    <div class="q" style="background:var(--brand-soft)"><h4 style="color:var(--brand)">機會</h4><ul><li>車內螢幕數量持續增加：HUD、電子後視鏡、乘客屏</li><li>二輪車儀表由段碼屏改 TFT</li><li>護眼、低功耗、反射式顯示的 ESG 需求</li><li>大廠退出小量特殊規格，留下利基</li></ul></div>
+    <div class="q" style="background:var(--amber-soft)"><h4 style="color:var(--amber)">威脅</h4><ul><li>中國廠以 8.6 代線切小尺寸，價格持續下探</li><li>OLED 滲透手機與穿戴</li><li>天馬、京東方、友達、群創在車載的規模優勢</li><li>記憶體漲價排擠消費性終端需求（2026）</li></ul></div>
+  </div>
+</section>
+<!-- ============ 07 趨勢與挑戰 ============ -->
+<section class="tab" id="tab-trend">
+  <div class="sec-head">
+    <div class="kicker">Trends & Challenges</div>
+    <h2>趨勢與挑戰</h2>
+    <p class="lede">面板業的大方向：大尺寸 LCD 全部往中國集中，OLED 吃掉高階手機，車載與工控是 LCD 廠剩下的好生意。每一項對彩晶都有具體的影響。</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><span class="chip r">壓力</span><h4 style="margin-top:8px">中國 8.6 代線切小尺寸</h4><p>惠科、華星、京東方的 8.6 代線在製程優化後開始切手機與平板 a-Si 面板。2026 年 8.6 代產能佔比上升到 26%。5 代線的單片成本沒有勝算。</p><div class="bar" style="margin-top:10px"><i style="width:26%"></i></div><p class="note">8.6 代線佔全球 LCD 產能：26%（2026）</p></div>
+    <div class="card"><span class="chip r">壓力</span><h4 style="margin-top:8px">OLED 往下滲透</h4><p>中國 8 代級 AMOLED 線陸續投產，OLED 手機面板價格逐年下降。穿戴幾乎全面 OLED 化。a-Si LCD 手機面板只剩功能機與低價機。</p><div class="bar" style="margin-top:10px"><i style="width:60%;background:var(--violet)"></i></div><p class="note">OLED 在智慧型手機面板的滲透率已過半</p></div>
+    <div class="card"><span class="chip g">機會</span><h4 style="margin-top:8px">車內螢幕越來越多</h4><p>一台車從一片中控變成儀表、中控、副駕、後座、HUD、電子後視鏡。反射式前向顯示（含擋風玻璃整合 HUD）出貨量預估從 2025 年 130 萬片增至 2030 年 680 萬片。車載案子生命週期 5 到 10 年，價格穩定。</p></div>
+    <div class="card"><span class="chip g">機會</span><h4 style="margin-top:8px">工控、醫療、二輪車</h4><p>工控要寬溫、高亮、長供貨；醫療要認證與穩定；二輪車儀表從段碼屏改彩色 TFT。這些市場量小、規格雜、換供應商成本高，大廠不愛做。</p></div>
+    <div class="card"><span class="chip g">機會</span><h4 style="margin-top:8px">低功耗與護眼的 ESG 需求</h4><p>教育平板、電子書、戶外裝置要求低藍光、低耗電。反射式 LCD 與電子紙（元太、膽固醇液晶）在這塊競爭。彩晶以 EVD 切入。</p></div>
+    <div class="card"><span class="chip a">變數</span><h4 style="margin-top:8px">記憶體漲價擠壓終端</h4><p>2026 年 DRAM 與 NAND 價格上漲，終端品牌調價，消費性面板需求被排擠。彩晶管理層在股東會直接點名這是最大不確定因素。</p></div>
+    <div class="card"><span class="chip a">變數</span><h4 style="margin-top:8px">關稅與分散製造</h4><p>中美貿易戰後，客戶要求「非中國產地」選項。台灣前段廠是優勢，但後段模組在南京。車用客戶對產地與供貨延續性特別敏感。</p></div>
+    <div class="card"><span class="chip b">同業</span><h4 style="margin-top:8px">台灣雙虎離開「面板廠時代」</h4><p>群創賣廠給台積電、做扇出型面板級封裝（FoPLP）；友達推矽光子與場域解決方案，車用出貨全球前三。彩晶沒有第二曲線，仍在面板內找更好賺的產品。</p></div>
+  </div>
+
+  <h3 class="block">2026 年面板產業數字</h3>
+  <div class="grid g4 keep2">
+    <div class="stat"><div class="v">+2%</div><div class="l">2026 年面板產值成長預估（2025 年為 +3%）</div></div>
+    <div class="stat"><div class="v">72.4%</div><div class="l">中國四大廠合計電視面板出貨市占</div></div>
+    <div class="stat"><div class="v">≈200<small>億</small></div><div class="l">群創 2026 年前四月賣廠處分利益</div></div>
+    <div class="stat"><div class="v">21.6<small>億</small></div><div class="l">彩晶南科廠房處分利益，2026 第三季認列</div></div>
+  </div>
+
+  <h3 class="block">彩晶的三條路（市場討論中的情境）</h3>
+  <div class="grid g3">
+    <div class="card"><h4>縮小規模，專做利基</h4><p>減產到穩定接單量，維持車載、工控、穿戴特殊規格。營收變小，但稼動率與毛利回正。9 月的減產傳聞符合這條路。</p></div>
+    <div class="card"><h4>資產活化撐轉型</h4><p>賣廠房、土地換現金，補足轉型期間的虧損。2026 年第三季認列 21.6 億處分利益，帳面轉盈。</p></div>
+    <div class="card"><h4>退出前段製造</h4><p>市場上的關廠推測。若成真，公司可能保留品牌（Hannspree、HannsG）與模組、代理業務。公司尚未表態。</p></div>
+  </div>
+  <div class="callout warn" style="margin-top:16px"><b>對業務工作的含意：</b>客戶會問供貨延續性、EOL 計畫、產地。這三個問題在 2026 年下半年會比規格與價格更常被問到。</div>
+</section>
+<!-- ============ 08 業務實務 ============ -->
+<section class="tab" id="tab-sales">
+  <div class="sec-head">
+    <div class="kicker">Sales Practice</div>
+    <h2>面板業務的日常</h2>
+    <p class="lede">面板不是型錄商品。每個案子從詢價到量產要跨過規格、樣品、驗證、報價、交期，車載案子要一到兩年。業務的工作是把客戶的規格翻譯給工廠，把工廠的限制翻譯給客戶。</p>
+  </div>
+
+  <h3 class="block">從詢價到停產（點選步驟）</h3>
+  <div class="steps" id="steps">
+    <div class="step on" data-i="0"><div class="n">STEP 1</div><b>詢價 RFQ</b></div>
+    <div class="step" data-i="1"><div class="n">STEP 2</div><b>規格確認</b></div>
+    <div class="step" data-i="2"><div class="n">STEP 3</div><b>報價</b></div>
+    <div class="step" data-i="3"><div class="n">STEP 4</div><b>樣品</b></div>
+    <div class="step" data-i="4"><div class="n">STEP 5</div><b>客戶驗證</b></div>
+    <div class="step" data-i="5"><div class="n">STEP 6</div><b>量產</b></div>
+    <div class="step" data-i="6"><div class="n">STEP 7</div><b>變更與停產</b></div>
+  </div>
+  <div class="info" id="step-info" style="margin-top:12px"></div>
+
+  <h3 class="block">三種客戶，三種做法</h3>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>消費性（手機、平板）</th><th>車載</th><th>工控、醫療</th></tr></thead>
+    <tbody>
+      <tr><td class="k">單價</td><td>低，以美元計到小數點後兩位</td><td>中到高</td><td>中到高</td></tr>
+      <tr><td class="k">單案數量</td><td>每月數十萬片起</td><td>每年數萬到數十萬片</td><td>每月數百到數千片</td></tr>
+      <tr><td class="k">導入時間</td><td>數週到三個月</td><td>12 到 24 個月</td><td>3 到 6 個月</td></tr>
+      <tr><td class="k">生命週期</td><td>6 到 18 個月</td><td>5 到 10 年，含售後備品</td><td>5 到 10 年</td></tr>
+      <tr><td class="k">價格談判</td><td>每季甚至每月，看公開報價</td><td>年降（每年約 3% 到 5%）</td><td>相對穩定</td></tr>
+      <tr><td class="k">必要認證</td><td>客戶自訂</td><td>IATF 16949、PPAP、AEC-Q</td><td>依產業：醫療 ISO 13485、海事 IEC 60945</td></tr>
+      <tr><td class="k">最在意</td><td>價格、交期</td><td>品質、可靠度、供貨延續</td><td>供貨年限、EOL 通知、規格不變</td></tr>
+      <tr><td class="k">主要對手</td><td>京東方、惠科、華星</td><td>天馬、京東方、友達、群創、JDI</td><td>凌巨、群創、天馬、京東方精電</td></tr>
+      <tr><td class="k">毛利</td><td class="bad">低或負</td><td class="mid">中</td><td class="good">較高</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="block">規格表怎麼讀（示意）</h3>
+  <div class="two">
+    <div class="tbl"><table id="spec">
+      <thead><tr><th>項目</th><th>示意值</th></tr></thead>
+      <tbody>
+        <tr data-k="型號 HSD101PXX1" data-d="HSD = HannStar Display，接著三碼是尺寸：101 = 10.1 吋，070 = 7 吋。後面的碼是型號序與版本。"><td class="k">型號</td><td>HSD101PXX1-A00</td></tr>
+        <tr data-k="尺寸 / 解析度" data-d="對角線 10.1 吋，1280×800 稱為 WXGA。像素越多越細，但 a-Si 做到 Full HD 以上會吃力。"><td class="k">尺寸 / 解析度</td><td>10.1" / 1280 × 800</td></tr>
+        <tr data-k="顯示模式" data-d="IPS 廣視角、常黑（Normally Black：不通電時是黑的）。車載幾乎都指定 IPS。"><td class="k">顯示模式</td><td>IPS，常黑，穿透式</td></tr>
+        <tr data-k="亮度" data-d="1000 nits 是車載與戶外等級。消費性平板 350 到 500。亮度高，背光成本與功耗都高。"><td class="k">亮度</td><td>1000 nits（典型值）</td></tr>
+        <tr data-k="對比 / 視角" data-d="800:1 是 IPS 常見值。85/85/85/85 表示上下左右各 85 度仍符合對比規範。"><td class="k">對比 / 視角</td><td>800:1 / 85·85·85·85</td></tr>
+        <tr data-k="色域" data-d="NTSC 60% 是 a-Si 常見值，72% 需要更好的彩色濾光片與背光。客戶若指定 sRGB 100% 要先確認可行。"><td class="k">色域</td><td>NTSC 60%</td></tr>
+        <tr data-k="介面" data-d="LVDS 是工控與車載常見介面；MIPI 用於手機平板；eDP 用於筆電。客戶主機板決定，改介面等於重做驅動板。"><td class="k">介面</td><td>LVDS 1ch 8-bit</td></tr>
+        <tr data-k="工作 / 儲存溫度" data-d="-30 到 +85°C 是車載規格。液晶在低溫反應變慢、高溫會失效，寬溫液晶材料更貴。"><td class="k">工作 / 儲存溫度</td><td>-30~85°C / -40~95°C</td></tr>
+        <tr data-k="觸控" data-d="In-cell TDDI 代表觸控做在面板裡。若客戶要多點防水手套操作，要確認 IC 支援。"><td class="k">觸控</td><td>In-cell（TDDI），10 點</td></tr>
+        <tr data-k="外形 / 厚度" data-d="外框尺寸與厚度決定客戶機構是否要改模。改 0.1 mm 客戶都可能要重開模具。"><td class="k">外形 / 厚度</td><td>229 × 149 × 2.6 mm</td></tr>
+        <tr data-k="背光壽命" data-d="LED 亮度衰減到一半的時間。車載與工控要求 50,000 小時以上。"><td class="k">背光壽命</td><td>50,000 小時</td></tr>
+      </tbody>
+    </table></div>
+    <div class="info" id="spec-info"><div class="tag">點選左表任一列</div><h4>每一列都是一個談判點</h4><p>客戶給的規格常常是「抄別家的」。業務的價值在於問出哪些是真的必要、哪些可以用現有型號對應，避免走客製。</p></div>
+  </div>
+
+  <h3 class="block">客戶常問的十件事</h3>
+  <div class="grid g2">
+    <div class="card"><h4>1. 這個型號會供貨多久？</h4><p>工控與車載第一個問題。答案要有 EOL 政策、LTB 機制、替代型號。</p></div>
+    <div class="card"><h4>2. 產地在哪裡？</h4><p>前段台灣南科，後段模組南京或南科。關稅與合規客戶會要求細到每一段。</p></div>
+    <div class="card"><h4>3. 有沒有現成型號？</h4><p>對應現有型號不用 NRE，交期短。客製要 NRE、MOQ、更長開發期。</p></div>
+    <div class="card"><h4>4. 交期多久？</h4><p>現貨型號 6 到 10 週；新開案含樣品與驗證數月。前段投片一片玻璃要走三到四週。</p></div>
+    <div class="card"><h4>5. 價格能到多少？</h4><p>消費性客戶會拿公開報價與中國廠報價比。車載與工控談的是總擁有成本與供貨風險。</p></div>
+    <div class="card"><h4>6. 有 IATF 16949 嗎？</h4><p>車載入門票。沒有這張證，Tier 1 不會開案。</p></div>
+    <div class="card"><h4>7. 亮度可以再高、功耗可以再低嗎？</h4><p>兩者互相衝突。方案是穿透率更高的面板設計、更好的背光、或反射式。</p></div>
+    <div class="card"><h4>8. Open cell 還是模組？</h4><p>客戶有模組能力就買 open cell。談報價前先確認交貨型態。</p></div>
+    <div class="card"><h4>9. 出了問題怎麼處理？</h4><p>RMA 流程、8D 報告、不良率 ppm 承諾。車載客戶要求 0 ppm 目標與失效分析。</p></div>
+    <div class="card"><h4>10. 公司最近的新聞是怎麼回事？</h4><p>2026 年下半年一定會被問。以公司公告為準，不猜測，不承諾公告以外的內容。</p></div>
+  </div>
+
+  <h3 class="block">每天會看到的數字</h3>
+  <div class="grid g4 keep2">
+    <div class="card soft"><h4>稼動率</h4><p>投片數 ÷ 產能。低於七成，折舊攤不掉。</p></div>
+    <div class="card soft"><h4>ASP</h4><p>平均售價。產品組合往車載搬，ASP 上升。</p></div>
+    <div class="card soft"><h4>毛利率</h4><p>2026 上半年為負。轉正是全公司目標。</p></div>
+    <div class="card soft"><h4>Forecast 準確度</h4><p>客戶預估與實際下單的差距。差太多，工廠不是缺料就是庫存。</p></div>
+  </div>
+
+  <h3 class="block">貿易條件與付款</h3>
+  <div class="grid g3">
+    <div class="card"><h4>Incoterms</h4><p>FOB 台灣或上海：客戶負責海運後的風險。DDP：賣方一路送到門口含關稅。車載客戶常要 DAP 到指定倉。</p></div>
+    <div class="card"><h4>付款</h4><p>T/T 電匯最常見。新客戶要求預付或 L/C 信用狀。大客戶談 OA 月結 60 到 90 天。</p></div>
+    <div class="card"><h4>幣別</h4><p>面板報價幾乎都是美元。新台幣升值直接吃毛利，公司財報有匯損項目。</p></div>
+  </div>
+
+  <h3 class="block">資訊來源</h3>
+  <div class="pill-row">
+    <span class="pill">公開資訊觀測站（重大訊息、財報）</span>
+    <span class="pill">彩晶官網投資人專區（每月營收）</span>
+    <span class="pill">TrendForce / WitsView 面板報價</span>
+    <span class="pill">Omdia、DSCC 出貨統計</span>
+    <span class="pill">DIGITIMES</span>
+    <span class="pill">工商時報、經濟日報</span>
+    <span class="pill">Touch Taiwan 展（每年 4 月）</span>
+    <span class="pill">Display Week（SID，每年 5 月）</span>
+  </div>
+</section>
+
+<!-- ============ 09 測驗 ============ -->
+<section class="tab" id="tab-quiz">
+  <div class="sec-head">
+    <div class="kicker">Quiz</div>
+    <h2>十題自我檢查</h2>
+    <p class="lede">看完前面八頁，這十題應該能答對八題以上。</p>
+  </div>
+  <div class="quiz" id="quiz"></div>
+  <div class="card soft" id="quiz-score" style="display:none"><h4 id="quiz-score-text"></h4></div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    資料整理時點：2026 年 9 月 18 日。財務與公司事件來自公開財報、重大訊息與工商時報、經濟日報、DIGITIMES、鏡週刊、Newtalk 等媒體報導；產業份額來自集邦、Omdia 等研究機構公開摘要。成本結構、產能佔比走勢、市場定位圖為示意。傳聞事項以公司正式公告為準。
+  </div>
+</footer>
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a={},txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;};
+
+/* ---------- tabs ---------- */
+const tabs=$$('#nav button');
+function show(id,push=true){
+  $$('section.tab').forEach(s=>s.classList.toggle('active',s.id==='tab-'+id));
+  tabs.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  if(push)history.replaceState(null,'','#'+id);
+  window.scrollTo({top:0});
+  const b=tabs.find(b=>b.dataset.tab===id); if(b) b.scrollIntoView({block:'nearest',inline:'center'});
+}
+tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));
+show((location.hash||'#home').slice(1),false);
+
+/* ---------- LCD stack ---------- */
+const layers=[
+ {n:'背光模組 BLU',c:'#ffe9a3',s:'#e0c76a',t:'燈在這裡',d:'LED 光源加導光板、擴散片、增亮片。LCD 自己不發光，全部亮度來自這一層。功耗最大、成本最高的零件之一，向瑞儀、中光電等背光廠採購。Mini LED 背光就是把這層的 LED 做成上千顆分區控制。'},
+ {n:'下偏光片',c:'#cfd8e3',s:'#a9b6c6',t:'光的第一道閘',d:'只讓某一個方向振動的光通過。上下兩片偏光片方向互相垂直，中間靠液晶轉動光的方向，決定亮或暗。主要供應商是日東電工、住友化學、LG 化學、杉金。'},
+ {n:'TFT 陣列玻璃',c:'#0f5fa8',s:'#0a4a84',t:'決定製程與成本',d:'在玻璃上做出數百萬顆薄膜電晶體，每個子像素一顆開關。用非晶矽（a-Si）、低溫多晶矽（LTPS）或氧化物（IGZO）做，就是面板廠的「製程」。彩晶用 a-Si，5.3 代線。這一層的良率與稼動率決定面板廠賺不賺錢。'},
+ {n:'液晶層',c:'#7fb3e6',s:'#5a94c9',t:'百葉窗本體',d:'厚度只有幾微米。TFT 給電壓，液晶分子轉動角度改變，通過的光量跟著改變。TN、VA、IPS 說的是液晶分子的排列方式。寬溫液晶材料（車載用）更貴，供應商為默克、JNC、DIC。'},
+ {n:'彩色濾光片 CF',c:'url(#cf)',s:'#8a8f99',t:'顏色從這裡來',d:'把白光濾成紅、綠、藍三個子像素。色域（NTSC %）主要由這層的顏料與背光光譜決定。彩晶 100% 自製，這是少數自己掌握的關鍵材料。'},
+ {n:'上偏光片',c:'#cfd8e3',s:'#a9b6c6',t:'光的第二道閘',d:'與下偏光片配合完成明暗控制。表面可加防眩（AG）、防反射（AR）處理。反射式 LCD 會在這裡做文章，讓環境光反射回來取代背光。'},
+ {n:'觸控與蓋板',c:'#e3f4f1',s:'#8fcfc4',t:'客戶摸到的地方',d:'觸控感測層可以外掛、做在面板上（on-cell）或做進 TFT（in-cell / TDDI）。最上面是強化玻璃蓋板。車載案子多要求光學貼合，把層與層之間的空氣填滿膠，減少反光並提升強度。'},
+];
+(function(){
+  const g=$('#layers'),svg=$('#stack');
+  const defs=svg.querySelector('defs');
+  const pat=el('pattern',{id:'cf',width:'18',height:'18',patternUnits:'userSpaceOnUse',patternTransform:'skewX(-30)'});
+  ['#e05a4e','#3fae5a','#3f7de0'].forEach((c,i)=>pat.appendChild(el('rect',{x:i*6,y:0,width:6,height:18,fill:c,opacity:.85})));
+  defs.appendChild(pat);
+  const x0=30,W=270,S=110,D=60,t=14,gap=44,base=380;
+  layers.forEach((L,i)=>{
+    const y=base-i*gap;
+    const grp=el('g',{class:'layer','data-i':i});
+    grp.appendChild(el('polygon',{class:'top',points:`${x0},${y} ${x0+W},${y} ${x0+W+S},${y-D} ${x0+S},${y-D}`,fill:L.c,stroke:L.s,'stroke-width':1.5}));
+    grp.appendChild(el('polygon',{points:`${x0},${y} ${x0+W},${y} ${x0+W},${y+t} ${x0},${y+t}`,fill:L.s,opacity:.8}));
+    grp.appendChild(el('polygon',{points:`${x0+W},${y} ${x0+W+S},${y-D} ${x0+W+S},${y-D+t} ${x0+W},${y+t}`,fill:L.s,opacity:.6}));
+    grp.appendChild(el('text',{x:x0+W+S+12,y:y-D/2+4,'font-size':'13','font-weight':'700',fill:'#1b2230'},`${i+1}. ${L.n}`));
+    grp.addEventListener('click',()=>{
+      $$('.layer',g).forEach(x=>x.classList.remove('on'));grp.classList.add('on');
+      $('#stack-info').innerHTML=`<div class="tag">第 ${i+1} 層 · ${L.t}</div><h4>${L.n}</h4><p>${L.d}</p>`;
+    });
+    g.appendChild(grp);
+  });
+  // light arrow
+  g.appendChild(el('path',{d:`M14,${base+20} L14,${base-6*gap-D-8}`,stroke:'#d9931e','stroke-width':'3','stroke-dasharray':'6 5',fill:'none','marker-end':'url(#arr2)'}));
+  const m=el('marker',{id:'arr2',viewBox:'0 0 10 10',refX:'6',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto'});m.appendChild(el('path',{d:'M0 0L10 5L0 10z',fill:'#d9931e'}));defs.appendChild(m);
+  g.appendChild(el('text',{x:4,y:base+36,'font-size':'11',fill:'#d9931e','font-weight':'700'},'光'));
+})();
+
+/* ---------- pixel mixer ---------- */
+(function(){
+  const g=$('#px'),svg=g.ownerSVGElement;
+  const wrap=document.createElement('div');svg.parentNode.insertBefore(wrap,svg);wrap.appendChild(svg);
+  const ctl=document.createElement('div');ctl.style.cssText='display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px;margin-top:6px';
+  const cols=[['R','#e05a4e'],['G','#3fae5a'],['B','#3f7de0']],vals=[220,140,60];
+  cols.forEach((c,i)=>{const d=document.createElement('label');d.innerHTML=`<b style="color:${c[1]}">${c[0]}</b> <span>${vals[i]}</span><input type="range" min="0" max="255" value="${vals[i]}" style="width:100%">`;d.querySelector('input').addEventListener('input',e=>{vals[i]=+e.target.value;d.querySelector('span').textContent=vals[i];draw();});ctl.appendChild(d);});
+  wrap.appendChild(ctl);
+  function draw(){
+    g.innerHTML='';
+    g.appendChild(el('rect',{x:20,y:20,width:250,height:180,rx:8,fill:'#1b2230'}));
+    cols.forEach((c,i)=>{
+      g.appendChild(el('rect',{x:40+i*78,y:36,width:60,height:148,rx:4,fill:c[1],opacity:(vals[i]/255).toFixed(2)}));
+      g.appendChild(el('rect',{x:40+i*78,y:36,width:60,height:148,rx:4,fill:'none',stroke:'#3a4354'}));
+      g.appendChild(el('text',{x:70+i*78,y:196,'text-anchor':'middle','font-size':'10',fill:'#cfd8e3'},c[0]+' 子像素'));
+    });
+    g.appendChild(el('text',{x:145,y:14,'text-anchor':'middle','font-size':'11',fill:'#66717f'},'放大一個像素：三顆 TFT 各自控制亮度'));
+    g.appendChild(el('path',{d:'M290 110 L340 110',stroke:'#9aa5b4','stroke-width':'2','marker-end':'url(#arr)'}));
+    g.appendChild(el('rect',{x:360,y:40,width:170,height:140,rx:12,fill:`rgb(${vals[0]},${vals[1]},${vals[2]})`,stroke:'#e4e8ee'}));
+    g.appendChild(el('text',{x:445,y:200,'text-anchor':'middle','font-size':'11',fill:'#66717f'},'肉眼看到的顏色'));
+  }
+  draw();
+})();
+
+/* ---------- generation cutter ---------- */
+(function(){
+  const svg=$('#gen-svg'),info=$('#gen-info');
+  let gen={g:'5.3',w:1200,h:1300},size={d:7,r:1.6};
+  const K=400/3370;
+  function draw(){
+    svg.innerHTML='';
+    const gw=gen.w*K,gh=gen.h*K,ox=10,oy=410-gh;
+    svg.appendChild(el('rect',{x:10,y:10,width:2940*K,height:3370*K,fill:'none',stroke:'#e4e8ee','stroke-dasharray':'4 4'}));
+    svg.appendChild(el('text',{x:2940*K+8,y:22,'font-size':'10',fill:'#9aa5b4'},'G10.5 參考'));
+    svg.appendChild(el('rect',{x:ox,y:oy,width:gw,height:gh,fill:'#e6f0fb',stroke:'#0f5fa8','stroke-width':'2'}));
+    const D=size.d*25.4,r=size.r;const pw=D*r/Math.sqrt(1+r*r),ph=pw/r;
+    const a=Math.floor(gen.w/pw)*Math.floor(gen.h/ph),b=Math.floor(gen.w/ph)*Math.floor(gen.h/pw);
+    const rot=b>a;const n=Math.max(a,b);const cw=rot?ph:pw,ch=rot?pw:ph;
+    const nx=Math.floor(gen.w/cw),ny=Math.floor(gen.h/ch);
+    let drawn=0;
+    for(let i=0;i<nx&&drawn<900;i++)for(let j=0;j<ny&&drawn<900;j++,drawn++){
+      svg.appendChild(el('rect',{x:ox+i*cw*K+0.5,y:oy+j*ch*K+0.5,width:Math.max(cw*K-1,1),height:Math.max(ch*K-1,1),fill:'#0f5fa8',opacity:.55,stroke:'#fff','stroke-width':'.5'}));
+    }
+    const util=(n*pw*ph)/(gen.w*gen.h)*100;
+    svg.appendChild(el('text',{x:ox,y:oy-6,'font-size':'12','font-weight':'700',fill:'#0f5fa8'},`G${gen.g}  ${gen.w} × ${gen.h} mm`));
+    info.innerHTML=`<div class="tag">切割試算</div><h4>${size.d} 吋面板，一片 G${gen.g} 玻璃切 <span style="color:var(--brand)">${n}</span> 片</h4>
+      <p>面板外形約 ${pw.toFixed(0)} × ${ph.toFixed(0)} mm（不含邊料）。玻璃利用率約 ${util.toFixed(0)}%。</p>
+      <p style="margin-top:6px">${n===0?'這個世代切不下這個尺寸。':(size.d>=27?'大尺寸只有大世代才划算，這是電視面板全部往 8.5 代以上集中的原因。':'小尺寸在任何世代都切得下。差別在單片成本：大世代一次處理的面積大，每片攤到的製程時間與折舊少。')}</p>`;
+  }
+  $$('#gen-pick button').forEach(b=>b.addEventListener('click',()=>{$$('#gen-pick button').forEach(x=>x.classList.remove('on'));b.classList.add('on');gen={g:b.dataset.g,w:+b.dataset.w,h:+b.dataset.h};draw();}));
+  $$('#size-pick button').forEach(b=>b.addEventListener('click',()=>{$$('#size-pick button').forEach(x=>x.classList.remove('on'));b.classList.add('on');size={d:+b.dataset.d,r:+b.dataset.r};draw();}));
+  draw();
+})();
+
+/* ---------- glossary ---------- */
+const TERMS=[
+ ['spec','解析度','Resolution','橫向 × 縱向的像素數，例如 1280×800（WXGA）、1920×1080（FHD）。','客戶說「要 FHD」時，先確認 a-Si 在該尺寸做不做得到，以及介面頻寬夠不夠。'],
+ ['spec','PPI','Pixels per inch','每吋像素數。手機 400 以上，平板 200 上下，車載 150 到 200。','PPI 越高越難做、越貴。車載常常不需要手機等級的 PPI。'],
+ ['spec','亮度','Luminance, nits (cd/m²)','面板正面的發光強度。消費品 300 到 500，車載與戶外 800 到 1000 以上。','亮度是背光在決定。要求高亮度就是要求更多 LED、更高功耗、更高成本。'],
+ ['spec','對比','Contrast Ratio','全白與全黑的亮度比。IPS 約 800:1 到 1500:1，VA 更高，OLED 近乎無限。','客戶拿 OLED 規格來比對比是常見的誤區，先問應用是否真的需要。'],
+ ['spec','色域','Color Gamut, NTSC / sRGB','能顯示的顏色範圍。a-Si 面板常見 NTSC 50% 到 72%。','sRGB 100% 約等於 NTSC 72%。兩種標準換算方式不同，報規格時要寫清楚基準。'],
+ ['spec','視角','Viewing Angle','偏離正面多少度仍維持規範對比。IPS 四方向 85 度以上。','規格書寫 85/85/85/85（上下左右）。TN 面板上下視角差，車載幾乎不接受。'],
+ ['spec','反應時間','Response Time','像素從一個灰階變到另一個所需的毫秒數。','影片與遊戲應用才在意。工控與車載儀表一般 25 ms 內即可。'],
+ ['spec','穿透率','Transmittance','背光穿過面板到達眼睛的比例。越高越亮、越省電。','提升穿透率是「低耗電」最直接的方法，也是面板廠自己能做的設計功夫。'],
+ ['spec','工作溫度','Operating Temperature','面板能正常運作的溫度範圍。車載 -30 到 +85°C，消費品 0 到 50°C。','寬溫需要特殊液晶材料與背光設計，成本高、開發期長。'],
+ ['spec','太陽光可讀','Sunlight Readable','在直射陽光下仍看得清。靠高亮度、低反射、或反射式設計。','戶外裝置、船用、農機的必問項目。'],
+ ['spec','Mura','Mura（亮度不均）','畫面上肉眼可見的亮度或色彩不均勻，日文「斑」。','客戶驗收最常退貨的原因之一。不同客戶的 Mura 標準差異很大，要先取得驗收規範。'],
+ ['spec','亮點暗點','Bright / Dark Dot','子像素恆亮或恆暗的瑕疵。規格會寫允許幾顆、距離多遠。','車載與醫療常要求零亮點，良率與成本直接相關。'],
+ ['spec','低藍光','Low Blue Light','降低 415 到 455 nm 波段的藍光比例，減少眼睛負擔。','教育平板、閱讀裝置、護眼顯示器的賣點。有硬體式（背光）與軟體式兩種，硬體式不偏黃。'],
+ ['spec','防窺','Privacy Display','側視角刻意變暗，讓旁人看不到內容。','車載乘客屏（不干擾駕駛）、金融終端、筆電。彩晶有軟性防窺面板。'],
+ ['spec','反射式','Reflective LCD','不用背光，靠環境光反射顯示。功耗極低，戶外清晰，室內暗處需前光。','與電子紙競爭的技術。適合電子標籤、閱讀、戶外看板、HUD 前向顯示。'],
+ ['proc','TFT','Thin Film Transistor','薄膜電晶體。每個子像素一顆，做在玻璃上，是「開關」。','面板廠的核心製程就是做 TFT。前段廠也叫 Array 廠。'],
+ ['proc','a-Si','Amorphous Silicon 非晶矽','最成熟、最便宜的 TFT 材料。電子移動率低，解析度與邊框有極限。','彩晶的主力製程。價格競爭最激烈的區段，中國 8.6 代線也做。'],
+ ['proc','LTPS','Low Temperature Poly-Silicon 低溫多晶矽','電子移動率高 100 倍，可做高解析度、窄邊框、低功耗。製程步驟多、成本高。','中高階手機、車載儀表主流。彩晶沒有 LTPS 線，這類案子接不到。'],
+ ['proc','IGZO / Oxide','氧化物半導體','銦鎵鋅氧化物。介於 a-Si 與 LTPS 之間，漏電低、適合大尺寸低功耗。','平板、筆電、監視器。夏普、LG 顯示、友達有量產。'],
+ ['proc','彩色濾光片','Color Filter, CF','紅綠藍濾色層加黑色矩陣，做在上層玻璃上。','彩晶 100% 自製。多數面板廠自製，少數外購。'],
+ ['proc','偏光片','Polarizer','面板上下各一片，決定光的振動方向。','外購件，日韓廠為主。價格與供貨影響面板成本。'],
+ ['proc','背光模組','Backlight Unit, BLU','LED 燈條、導光板、反射片、擴散片、增亮片的組合。','模組成本最大項。亮度、均勻性、壽命都由它決定。'],
+ ['proc','玻璃基板','Glass Substrate','無鹼玻璃，厚度 0.5、0.4、0.3、0.25 mm。康寧、旭硝子、電氣硝子供應。','0.25t 代表 0.25 mm 厚。薄玻璃用於穿戴與輕薄模組，彩晶有此技術。'],
+ ['proc','世代','Generation, G','以玻璃基板尺寸命名的產線等級。G5.3 約 1200×1300 mm，G8.6 為 2250×2600 mm。','世代越大，切大尺寸越便宜。彩晶只有一條 5.3 代線。'],
+ ['proc','切割效率','Cutting Efficiency','一片母玻璃能切幾片目標面板、玻璃利用率多少。','報價的起點。同一尺寸換一個世代，成本可能差兩到三成。'],
+ ['proc','Open Cell','裸面板','只含 TFT 玻璃、液晶、彩色濾光片與偏光片，沒有背光與驅動板。','客戶有模組廠時買 open cell。單價低、不含背光風險。'],
+ ['proc','LCM','Liquid Crystal Module 液晶模組','Open cell 加背光、驅動 IC、軟板，可直接裝機。','彩晶南京廠與南科模組線做後段。多數工控與車載客戶買模組。'],
+ ['proc','驅動 IC','Driver IC','把影像訊號轉成每列每行的電壓。分 Gate 與 Source driver。','聯詠、奇景、瑞鼎、敦泰。2021 年缺 IC 曾讓面板出不了貨。'],
+ ['proc','IGD','Integrated Gate Driver','把 gate 驅動電路直接做在玻璃上，省 IC、省邊框。','彩晶重點技術。窄邊框案子的必要條件。'],
+ ['proc','稼動率','Utilization Rate','實際投片數除以產能。低於七成，折舊攤不掉。','面板廠虧損的第一個原因。「全產全銷」就是稼動率 100% 且全部賣掉。'],
+ ['proc','良率','Yield','合格品佔投入的比例。','新產品初期良率低、成本高。良率爬升是量產前的關鍵指標。'],
+ ['proc','投片','Input, Glass Start','前段開始生產的玻璃數量。前段生產週期三到四週。','客戶下單到面板出來至少一個月。Forecast 準確度決定投片決策。'],
+ ['touch','外掛式觸控','Out-cell (GFF / GG / OGS)','觸控是獨立零件，貼在面板上。','彈性大，任何面板都能配。厚度與成本多一層。'],
+ ['touch','On-cell','On-cell Touch','觸控層鍍在彩色濾光片玻璃外側。','比外掛薄，比 in-cell 容易做。'],
+ ['touch','In-cell / TDDI','Touch and Display Driver Integration','觸控感測做進 TFT 層，驅動與觸控合為一顆 IC。','最薄、最便宜。彩晶穿戴面板用 TDDI 為全球首發。IC 供應商：敦泰、聯詠、奇景。'],
+ ['touch','光學貼合','Optical Bonding / Full Lamination','用光學膠填滿蓋板、觸控、面板之間的空氣層。','減少反光、增加強度、防霧氣。車載幾乎必備，成本與良率是挑戰。'],
+ ['touch','介面','Interface: LVDS / MIPI / eDP / RGB','面板與主機板之間的訊號規格。LVDS 用於工控車載，MIPI 用於手機平板，eDP 用於筆電。','客戶主機板決定介面。改介面等於重做驅動板與韌體。'],
+ ['touch','FPC / COG / COF','軟板 / IC 在玻璃上 / IC 在軟板上','驅動 IC 的安裝方式與訊號引出方式。','影響模組厚度與邊框。COG 最常見。'],
+ ['touch','局部調光','Local Dimming','Mini LED 背光分區控制亮度，黑的地方把燈關掉。','車載高階中控與儀表。彩晶有車載 Mini LED 局部調光方案。'],
+ ['auto','Tier 1','一級供應商','直接供貨給車廠的零件系統廠，如電裝、大陸集團、博世、德賽西威。','面板廠多為 Tier 2，客戶是 Tier 1，但車廠會指定面板供應商。'],
+ ['auto','IATF 16949','汽車業品質管理系統','汽車供應鏈的品質系統認證。','沒有這張證，Tier 1 不會開案。'],
+ ['auto','PPAP','Production Part Approval Process','量產前提交給客戶的完整文件包：流程圖、FMEA、控制計畫、測量報告等。','車載案子從樣品到量產的最後一關，通常要三到六個月。'],
+ ['auto','AEC-Q','Automotive Electronics Council','車規電子元件可靠度標準。Q100 為 IC，Q200 為被動元件。','驅動 IC 要車規版本，價格與交期都不同。'],
+ ['auto','Design-in','設計導入','客戶把某顆料件設計進產品裡。','車載 design-in 後通常鎖定整個車型生命週期，換供應商成本極高。'],
+ ['auto','EOL / LTB','End of Life / Last Time Buy','停產通知 / 最後一次購買。','工控與醫療客戶最在意的問題。標準做法是提前 6 到 12 個月通知並開放 LTB。'],
+ ['auto','PCN','Product Change Notice','任何材料、製程、產地的變更都要事先通知客戶。','車載客戶需要重新驗證，PCN 要提早幾個月發。'],
+ ['auto','HMI','Human Machine Interface','機台操作面板、觸控螢幕的統稱，工控用語。','研華、樺漢等工控廠是這類客戶。'],
+ ['auto','HUD / 電子後視鏡','Head-Up Display / e-Mirror','投射到擋風玻璃的抬頭顯示 / 用螢幕取代後視鏡。','車載新案源。HUD 要求極高亮度（10,000 nits 級）與寬溫。'],
+ ['auto','段碼屏','Segment LCD','只能顯示固定圖案的單色 LCD，如機車儀表的數字。','二輪車儀表從段碼屏升級到 TFT 彩屏，是彩晶看好的成長來源。'],
+ ['biz','RFQ','Request for Quotation','客戶的正式報價需求，附規格、數量、目標價、時程。','業務工作的起點。要先判斷能否用現有型號對應。'],
+ ['biz','NRE','Non-Recurring Engineering','一次性工程費用。客製面板的設計、光罩、開模。','客製案子要收 NRE，數量大時可攤入單價。'],
+ ['biz','MOQ','Minimum Order Quantity','最小訂購量。','小尺寸面板一次投片就是一整片玻璃，切下來的量就是 MOQ 的下限。'],
+ ['biz','Forecast','Rolling Forecast 滾動預估','客戶每月更新未來 3 到 6 個月的需求預估。','工廠依此投片。預估過高變庫存，過低就缺貨。'],
+ ['biz','Allocation','配額','缺貨時面板廠決定給哪個客戶多少量。','2021 年缺貨時的日常。好光景時業務要分配，壞光景時要求客戶多拿。'],
+ ['biz','ASP','Average Selling Price','平均售價。','產品組合往車載工控搬，ASP 上升。財報上看得到。'],
+ ['biz','面板報價','Panel Price Quote','TrendForce（WitsView）、Omdia 每月公布各尺寸面板價格。','客戶談價的基準。業務要知道自家產品在報價表上的位置。'],
+ ['biz','OEM / ODM','代工 / 設計代工','OEM 依客戶設計製造，ODM 自行設計後貼客戶品牌。','仁寶、緯創、和碩是 ODM，也是面板的直接客戶。'],
+ ['biz','Incoterms','國際貿易條件','FOB、CIF、DAP、DDP 等，規定運費、保險、風險在哪裡轉移。','報價一定要註明條件。同一個價格 FOB 與 DDP 差很多。'],
+ ['biz','T/T / L/C / OA','付款方式','電匯 / 信用狀 / 記帳月結。','新客戶預付或 L/C，大客戶 OA 60 到 90 天。應收帳款風險由業務把關。'],
+ ['biz','ES / CS / MP','Engineering / Customer Sample / Mass Production','工程樣品 → 客戶樣品 → 量產。中間常有 PVT 試產驗證。','每個階段客戶要簽核。車載會在 CS 之後走 PPAP。'],
+ ['biz','RMA / 8D','Return Merchandise Authorization / 8 Disciplines','退貨授權 / 八步驟問題解決報告。','客戶退貨時業務負責協調品保出 8D。車載客戶要求 24 小時內初步回覆。'],
+ ['biz','ppm','Parts per Million','百萬分之不良率。','車載目標 0 ppm，消費品數百 ppm。承諾 ppm 等於承諾成本。'],
+ ['biz','全產全銷','Full Production, Full Sales','產能全開且全部賣掉。','彩晶 2026 年策略的核心用語。意思是稼動率與庫存都要健康。'],
+];
+(function(){
+  const list=$('#term-list'),catName={spec:'規格與光學',proc:'結構與製程',touch:'觸控與介面',auto:'車載與工控',biz:'商務與交易'};
+  let cat='all',q='';
+  function render(){
+    list.innerHTML='';
+    TERMS.filter(t=>(cat==='all'||t[0]===cat)&&(!q||(t[1]+t[2]+t[3]+t[4]).toLowerCase().includes(q))).forEach(t=>{
+      const d=document.createElement('div');d.className='term';
+      d.innerHTML=`<div class="h"><b>${t[1]}</b><i>${t[2]}</i></div><div class="def">${t[3]}</div><div class="sc">${t[4]}</div><div style="margin-top:6px"><span class="chip">${catName[t[0]]}</span></div>`;
+      d.addEventListener('click',()=>d.classList.toggle('open'));list.appendChild(d);
+    });
+    if(!list.children.length)list.innerHTML='<p class="note">沒有符合的詞。</p>';
+  }
+  $$('#term-filters button').forEach(b=>b.addEventListener('click',()=>{$$('#term-filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cat=b.dataset.c;render();}));
+  $('#term-search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
+  render();
+})();
+
+/* ---------- cost pie ---------- */
+(function(){
+  const data=[['背光模組',22,'#0f5fa8'],['驅動 IC',12,'#3f7de0'],['偏光片',12,'#7fb3e6'],['玻璃基板',7,'#0b8a7c'],['彩色濾光片材料',8,'#5cc0b0'],['液晶與其他材料',11,'#a9d9d0'],['折舊與製造費用',28,'#d9931e']];
+  const svg=$('#cost-pie'),cx=160,cy=160,r=120,ir=70;let a0=-Math.PI/2;
+  data.forEach(d=>{const a1=a0+d[1]/100*2*Math.PI;const p=(a)=>[cx+r*Math.cos(a),cy+r*Math.sin(a)],pi=(a)=>[cx+ir*Math.cos(a),cy+ir*Math.sin(a)];
+    const large=d[1]>50?1:0;const [x0,y0]=p(a0),[x1,y1]=p(a1),[xi0,yi0]=pi(a0),[xi1,yi1]=pi(a1);
+    svg.appendChild(el('path',{d:`M${x0},${y0} A${r},${r} 0 ${large} 1 ${x1},${y1} L${xi1},${yi1} A${ir},${ir} 0 ${large} 0 ${xi0},${yi0} Z`,fill:d[2],stroke:'#fff','stroke-width':'2'}));
+    const am=(a0+a1)/2,lr=r+16;svg.appendChild(el('text',{x:cx+lr*Math.cos(am),y:cy+lr*Math.sin(am)+4,'text-anchor':Math.cos(am)>0.1?'start':(Math.cos(am)<-0.1?'end':'middle'),'font-size':'12',fill:'#1b2230','font-weight':'700'},d[1]+'%'));
+    a0=a1;});
+  svg.appendChild(el('text',{x:cx,y:cy-4,'text-anchor':'middle','font-size':'13',fill:'#66717f'},'模組成本'));
+  svg.appendChild(el('text',{x:cx,y:cy+16,'text-anchor':'middle','font-size':'13','font-weight':'700',fill:'#1b2230'},'示意'));
+  $('#cost-legend').innerHTML=data.map(d=>`<span><i style="background:${d[2]}"></i>${d[0]} ${d[1]}%</span>`).join('');
+})();
+
+/* ---------- share bars ---------- */
+(function(){
+  const svg=$('#share-svg');
+  const rows=[['1995',85,10,3,2],['2000',55,33,12,0],['2005',20,42,36,2],['2010',10,48,34,8],['2015',8,38,28,26],['2020',5,22,22,51],['2026',3,8,18,71],['2028 估',3,6,16,75]];
+  const cols=['#c9463d','#6b4fbb','#0f5fa8','#d9931e'];const bw=80,gap=30,H=200,top=20;
+  rows.forEach((r,i)=>{const x=40+i*(bw+gap);let y=top+H;
+    for(let k=0;k<4;k++){const h=r[k+1]/100*H;y-=h;svg.appendChild(el('rect',{x,y,width:bw,height:h,fill:cols[k],stroke:'#fff','stroke-width':'1'}));if(r[k+1]>=12)svg.appendChild(el('text',{x:x+bw/2,y:y+h/2+4,'text-anchor':'middle','font-size':'11',fill:'#fff','font-weight':'700'},r[k+1]+'%'));}
+    svg.appendChild(el('text',{x:x+bw/2,y:top+H+22,'text-anchor':'middle','font-size':'13','font-weight':'700',fill:'#1b2230'},r[0]));});
+  svg.appendChild(el('text',{x:40,y:270,'font-size':'11',fill:'#66717f'},'台灣 2026 年約 18%：友達 9.2% + 群創 9.1%（集邦），彩晶與凌巨不到 1%'));
+})();
+
+/* ---------- merger tree ---------- */
+(function(){
+  const svg=$('#tree-svg');const X=y=>50+(y-1988)/(2028-1988)*900;
+  const rows=[
+    {y:34,name:'聯友光電',start:1990,end:2001,c:'#0f5fa8'},
+    {y:70,name:'達碁科技',start:1996,end:2001,c:'#0f5fa8'},
+    {y:106,name:'廣輝電子',start:1999,end:2006,c:'#0f5fa8'},
+    {y:160,name:'奇美電子',start:1997,end:2010,c:'#0b8a7c'},
+    {y:196,name:'群創光電',start:2003,end:2010,c:'#0b8a7c'},
+    {y:232,name:'統寶光電',start:1999,end:2010,c:'#0b8a7c'},
+    {y:282,name:'中華映管',start:1997,end:2019,c:'#c9463d'},
+    {y:322,name:'瀚宇彩晶',start:1998,end:2027,c:'#d9931e'},
+    {y:362,name:'元太科技',start:1992,end:2027,c:'#6b4fbb'},
+  ];
+  const line=(x1,y1,x2,y2,c,w=3)=>svg.appendChild(el('path',{d:`M${x1},${y1} L${x2},${y2}`,stroke:c,'stroke-width':w,fill:'none','stroke-linecap':'round'}));
+  const label=(x,y,t,c='#1b2230',w='700',s='12')=>svg.appendChild(el('text',{x,y,'font-size':s,'font-weight':w,fill:c},t));
+  // year ticks
+  [1990,1995,2000,2005,2010,2015,2020,2025].forEach(y=>{svg.appendChild(el('path',{d:`M${X(y)},14 L${X(y)},375`,stroke:'#eef1f5'}));label(X(y)-14,10,String(y),'#9aa5b4','500','11');});
+  rows.forEach(r=>{line(X(r.start),r.y,X(r.end),r.y,r.c);svg.appendChild(el('circle',{cx:X(r.start),cy:r.y,r:5,fill:r.c}));label(X(r.start)+8,r.y-8,r.name+' '+r.start,r.c);});
+  // merges
+  line(X(2001),34,X(2001),70,'#0f5fa8');line(X(2001),52,X(2027),52,'#0f5fa8',6);label(X(2001)+8,48,'友達光電 2001（聯友+達碁）','#0f5fa8');
+  line(X(2006),106,X(2006),52,'#0f5fa8');label(X(2006)+8,100,'2006 併入友達','#66717f','500','11');
+  line(X(2010),160,X(2010),232,'#0b8a7c');line(X(2010),196,X(2027),196,'#0b8a7c',6);label(X(2010)+8,190,'新奇美電 2010 → 2012 更名群創','#0b8a7c');
+  svg.appendChild(el('text',{x:X(2019)+6,y:286,'font-size':'12','font-weight':'700',fill:'#c9463d'},'2019 聲請破產、2022 裁定'));
+  svg.appendChild(el('path',{d:`M${X(2019)-6},276 L${X(2019)+6},288 M${X(2019)+6},276 L${X(2019)-6},288`,stroke:'#c9463d','stroke-width':3}));
+  label(X(2019)+6,326,'2019 起車載工控轉型；2026 賣廠、減產','#d9931e','500','11');
+  svg.appendChild(el('circle',{cx:X(2005),cy:362,r:5,fill:'#6b4fbb'}));label(X(2005)+8,358,'2005 轉做電子紙，成為全球龍頭','#6b4fbb','500','11');
+  label(X(2024)-20,68,'2024–26 賣舊廠、跨入封裝與矽光子','#66717f','500','11');
+})();
+
+/* ---------- financial chart ---------- */
+(function(){
+  const svg=$('#fin-svg'),note=$('#fin-note');
+  const D={
+    rev:{label:'營收（新台幣億元）',pts:[['2020',195.5,0],['2021','高峰',1],['2022','',1],['2023','',1],['2024',99.6,0],['2025',114.4,0],['2026 前8月',78.9,0]],note:'2020 年為疫情紅利年。2024 年由 2025 年成長率回推。2021 至 2023 年未列出精確數字，僅標示趨勢方向。'},
+    eps:{label:'每股盈餘（元）',pts:[['2020',1.25,0],['2021',2.2,2],['2022',-0.86,0],['2023',-0.5,2],['2024',-1.86,0],['2025',-0.75,0],['2026 上半年',-0.02,0]],note:'2021 年為第二季 0.91、第三季 0.45、第四季 0.38 加上首季推估；2023 年為約略值。淺色柱為估計。2026 上半年為第一季 -0.06 加第二季 0.04。'}
+  };
+  function draw(k){
+    const d=D[k];svg.innerHTML='';note.textContent=d.note;
+    const L=60,R=880,T=56,B=250,n=d.pts.length,bw=(R-L)/n;
+    const nums=d.pts.filter(p=>typeof p[1]==='number').map(p=>p[1]);
+    const max=Math.max(...nums,0),min=Math.min(...nums,0);const scale=(B-T)/(max-min||1);const y0=T+max*scale;
+    svg.appendChild(el('path',{d:`M${L},${y0} L${R},${y0}`,stroke:'#9aa5b4'}));
+    svg.appendChild(el('text',{x:L,y:18,'font-size':'12',fill:'#66717f'},d.label));
+    d.pts.forEach((p,i)=>{const x=L+i*bw+bw*0.2,w=bw*0.6;
+      if(typeof p[1]==='number'){const h=Math.abs(p[1])*scale;const y=p[1]>=0?y0-h:y0;
+        svg.appendChild(el('rect',{x,y,width:w,height:Math.max(h,2),rx:4,fill:p[1]>=0?'#2f9a5d':'#c9463d',opacity:p[2]===2?.4:1}));
+        svg.appendChild(el('text',{x:x+w/2,y:p[1]>=0?y-8:y+h+16,'text-anchor':'middle','font-size':'13','font-weight':'700',fill:'#1b2230'},(p[2]===2?'約 ':'')+p[1]));}
+      else{svg.appendChild(el('rect',{x,y:T,width:w,height:B-T,rx:4,fill:'#f4f6f9'}));svg.appendChild(el('text',{x:x+w/2,y:(T+B)/2,'text-anchor':'middle','font-size':'12',fill:'#9aa5b4'},p[1]||'未列'));}
+      svg.appendChild(el('text',{x:x+w/2,y:B+22,'text-anchor':'middle','font-size':'12',fill:'#66717f'},p[0]));});
+  }
+  $$('#fin-pick button').forEach(b=>b.addEventListener('click',()=>{$$('#fin-pick button').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(b.dataset.k);}));
+  draw('rev');
+})();
+
+/* ---------- product mix donut ---------- */
+(function(){
+  const svg=$('#mix-svg'),info=$('#mix-info');
+  const C={車載:'#0b8a7c',工控:'#0f5fa8',手機:'#c9463d',平板:'#d9931e',消費性:'#c9463d',材料與其他:'#a9b6c6',其他:'#a9b6c6',穿戴與其他:'#6b4fbb'};
+  const D={
+    '2019':{t:'手機面板佔七成以上',d:'2019 年前手機面板比重超過 70%，客戶以中國白牌與品牌手機為主。價格跟著公開報價每季下滑。',v:[['手機',72],['平板',13],['穿戴與其他',15]]},
+    '2025':{t:'工控與車載合計約五成',d:'2025 年前三季：工控與車載約 50%，手機與功能機約 35%，平板 8 到 10%。管理層目標是讓消費性再往下。',v:[['車載',22],['工控',28],['手機',35],['平板',9],['材料與其他',6]]},
+    '2026':{t:'車載、工控各三成，消費性壓到兩成以下',d:'2026 年 4 月公布的目標。防眩片等材料型產品佔 5 到 7%。第三季有南科廠房處分利益 21.6 億入帳。',v:[['車載',30],['工控',30],['手機',10],['平板',10],['材料與其他',20]]},
+    '2027':{t:'車載超過三成',d:'2026 年 5 月股東會目標：2027 年車載營收比重 3 成以上，車載加工控上看六成。以 HUD、電子後視鏡、乘客屏、二輪車為新案源。',v:[['車載',35],['工控',30],['消費性',20],['材料與其他',15]]},
+  };
+  function draw(k){
+    const d=D[k];svg.innerHTML='';const cx=180,cy=140,r=105,ir=62;let a0=-Math.PI/2;
+    d.v.forEach(s=>{const a1=a0+s[1]/100*2*Math.PI;const p=(a,rr)=>[cx+rr*Math.cos(a),cy+rr*Math.sin(a)];const large=s[1]>50?1:0;
+      const [x0,y0]=p(a0,r),[x1,y1]=p(a1,r),[xi0,yi0]=p(a0,ir),[xi1,yi1]=p(a1,ir);
+      svg.appendChild(el('path',{d:`M${x0},${y0} A${r},${r} 0 ${large} 1 ${x1},${y1} L${xi1},${yi1} A${ir},${ir} 0 ${large} 0 ${xi0},${yi0} Z`,fill:C[s[0]]||'#ccc',stroke:'#fff','stroke-width':'2'}));
+      const am=(a0+a1)/2,[lx,ly]=p(am,r+18);svg.appendChild(el('text',{x:lx,y:ly+4,'text-anchor':Math.cos(am)>0.1?'start':(Math.cos(am)<-0.1?'end':'middle'),'font-size':'12','font-weight':'700',fill:'#1b2230'},`${s[0]} ${s[1]}%`));a0=a1;});
+    svg.appendChild(el('text',{x:cx,y:cy+5,'text-anchor':'middle','font-size':'16','font-weight':'900',fill:'#1b2230'},k==='2019'?'2019 前':k+(k>'2025'?' 目標':'')));
+    info.innerHTML=`<div class="tag">${k==='2019'?'2019 年前':k}</div><h4>${d.t}</h4><p>${d.d}</p><p class="note" style="margin-top:8px">比例為公開說法的整理，各項細分為示意。</p>`;
+  }
+  $$('#mix-pick button').forEach(b=>b.addEventListener('click',()=>{$$('#mix-pick button').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(b.dataset.k);}));
+  draw('2025');
+})();
+
+/* ---------- position map ---------- */
+(function(){
+  const svg=$('#pos-svg');const L=80,R=880,T=30,B=360;
+  svg.appendChild(el('rect',{x:L,y:T,width:R-L,height:B-T,fill:'#fafbfd',stroke:'#e4e8ee'}));
+  svg.appendChild(el('path',{d:`M${L},${B} L${R},${B} M${L},${B} L${L},${T}`,stroke:'#9aa5b4','stroke-width':'2'}));
+  [['a-Si LCD',0.12],['LTPS LCD',0.4],['AMOLED / Mini LED',0.68],['電子紙 / 反射式',0.92]].forEach(t=>svg.appendChild(el('text',{x:L+(R-L)*t[1],y:B+22,'text-anchor':'middle','font-size':'12',fill:'#66717f','font-weight':'700'},t[0])));
+  svg.appendChild(el('text',{x:L-10,y:T+10,'text-anchor':'end','font-size':'12',fill:'#66717f'},'規模大'));
+  svg.appendChild(el('text',{x:L-10,y:B,'text-anchor':'end','font-size':'12',fill:'#66717f'},'規模小'));
+  const pts=[
+    ['京東方',0.55,0.06,34,'#d9931e','a-Si、LTPS、OLED 全線，全球最大'],
+    ['華星 CSOT',0.5,0.16,28,'#d9931e','8.6 代切手機 a-Si，OLED 擴產'],
+    ['惠科 HKC',0.14,0.2,24,'#d9931e','8.6 代 a-Si 價格殺手'],
+    ['天馬',0.6,0.36,22,'#d9931e','LTPS、車載全球前列'],
+    ['三星顯示',0.7,0.1,26,'#6b4fbb','OLED 手機龍頭'],
+    ['友達',0.36,0.44,20,'#0f5fa8','車載出貨全球前三，轉型矽光子'],
+    ['群創',0.24,0.42,20,'#0f5fa8','賣廠轉封裝'],
+    ['JDI / 夏普',0.47,0.58,14,'#c9463d','日本，LTPS 車載，縮編中'],
+    ['凌巨',0.07,0.82,10,'#0f5fa8','台灣小尺寸工控'],
+    ['元太',0.92,0.5,16,'#6b4fbb','電子紙龍頭'],
+    ['瀚宇彩晶',0.2,0.64,16,'#0b8a7c','5.3 代 a-Si，車載工控轉型中'],
+  ];
+  pts.forEach(p=>{const x=L+(R-L)*p[1],y=T+(B-T)*p[2];const me=p[0]==='瀚宇彩晶';
+    svg.appendChild(el('circle',{cx:x,cy:y,r:p[3],fill:p[4],opacity:me?1:.35,stroke:me?'#1b2230':'none','stroke-width':'3'}));
+    svg.appendChild(el('text',{x:x,y:y-p[3]-6,'text-anchor':'middle','font-size':me?'14':'12','font-weight':'700',fill:'#1b2230'},p[0]));
+    svg.appendChild(el('text',{x:x,y:y+p[3]+14,'text-anchor':'middle','font-size':'10',fill:'#66717f'},p[5]));});
+  svg.appendChild(el('path',{d:`M${L+(R-L)*0.24},${T+(B-T)*0.66} Q${L+(R-L)*0.55},${T+(B-T)*0.86} ${L+(R-L)*0.85},${T+(B-T)*0.6}`,stroke:'#0b8a7c','stroke-width':'2','stroke-dasharray':'6 5',fill:'none','marker-end':'url(#arr)'}));
+  svg.appendChild(el('text',{x:L+(R-L)*0.55,y:T+(B-T)*0.93,'text-anchor':'middle','font-size':'11',fill:'#0b8a7c','font-weight':'700'},'彩晶的方向：特殊應用、反射式、低功耗，而非規模'));
+})();
+
+/* ---------- sales steps ---------- */
+(function(){
+  const S=[
+    ['詢價 RFQ','客戶送來尺寸、解析度、亮度、介面、觸控、數量、目標價、時程。','業務第一件事是判斷：現有型號能對應嗎？數量值得客製嗎？目標價與公開報價差多少？兩天內回覆初步可行性。'],
+    ['規格確認','與產品經理、研發一起把客戶規格逐條對照，列出可對應、需修改、做不到三類。','客戶規格常是「抄競品的」。問出真正必要的項目，能省掉一次 NRE 與三個月開發期。'],
+    ['報價','依數量級距、open cell 或模組、貿易條件、付款方式、NRE 與 MOQ 出正式報價。','報價單要註明有效期、匯率基準、材料漲價條款。車載報價要含年降計畫與備品供應年限。'],
+    ['樣品','ES 工程樣品驗證設計，CS 客戶樣品給客戶裝機測試。每個階段客戶簽核。','樣品交期是客戶最緊盯的時程。前段投片三到四週，模組一到兩週。'],
+    ['客戶驗證','消費品數週；工控三到六個月含環境測試；車載 12 到 24 個月，走 IATF 16949 與 PPAP。','驗證期間的每一個問題單（issue）都要追到關閉。車載客戶的 PPAP 文件包由品保主導、業務追進度。'],
+    ['量產','客戶每月給滾動預估，工廠依此投片，業務追交期、對帳、催款。','Forecast 準確度是量產期的核心工作。價格每季檢討，缺貨時協調配額。'],
+    ['變更與停產','任何材料、製程、產地變更發 PCN；停產前 6 到 12 個月發 EOL 通知，開放 LTB。','工控與醫療客戶最在意這一步。處理得好，客戶會把下一代產品也給你。'],
+  ];
+  const info=$('#step-info');
+  function draw(i){info.innerHTML=`<div class="tag">STEP ${i+1}</div><h4>${S[i][0]}</h4><p>${S[i][1]}</p><p style="margin-top:8px"><b style="color:var(--teal)">業務的工作 </b>${S[i][2]}</p>`;}
+  $$('#steps .step').forEach(s=>s.addEventListener('click',()=>{$$('#steps .step').forEach(x=>x.classList.remove('on'));s.classList.add('on');draw(+s.dataset.i);}));
+  draw(0);
+})();
+
+/* ---------- spec rows ---------- */
+$$('#spec tbody tr').forEach(tr=>tr.addEventListener('click',()=>{$$('#spec tbody tr').forEach(x=>x.style.background='');tr.style.background='var(--brand-soft)';$('#spec-info').innerHTML=`<div class="tag">規格解讀</div><h4>${tr.dataset.k}</h4><p>${tr.dataset.d}</p>`;}));
+
+/* ---------- quiz ---------- */
+(function(){
+  const Q=[
+    ['LCD 面板自己會發光嗎？',['會，每個像素都是光源','不會，靠背光模組','只有 IPS 會'],1,'LCD 是控制透光的百葉窗，光來自背光模組。自發光的是 OLED 與 Micro LED。'],
+    ['彩晶南科廠是幾代線？',['3.5 代','5.3 代','8.6 代'],1,'一條 5.3 代 a-Si 線，月產能約 14 萬片玻璃基板。'],
+    ['面板「世代」的數字代表什麼？',['技術新舊','玻璃基板尺寸','解析度等級'],1,'只跟玻璃基板大小有關。G8.6 是 2250×2600 mm。'],
+    ['彩晶的主力 TFT 製程是？',['LTPS','IGZO','a-Si'],2,'非晶矽，最成熟也最便宜，但也是中國 8.6 代線正在切入的區段。'],
+    ['2025 年前三季，車載加工控佔彩晶營收約多少？',['20%','50%','80%'],1,'約五成，手機約 35%，平板 8 到 10%。2027 年目標車載單獨超過三成。'],
+    ['面板五虎中，哪一家在 2019 年聲請破產？',['廣輝','中華映管','統寶'],1,'華映負債 418 億，2019 年聲請、2022 年法院裁定破產。'],
+    ['TDDI 是什麼？',['一種背光技術','觸控與驅動整合的 IC','一種玻璃厚度'],1,'Touch and Display Driver Integration。彩晶穿戴面板用 TDDI 為全球首發。'],
+    ['要進入車廠供應鏈，面板廠必須有哪張認證？',['ISO 13485','IATF 16949','IEC 60945'],1,'IATF 16949 是汽車業品質管理系統。ISO 13485 是醫療，IEC 60945 是海事。'],
+    ['2026 年 4 月，彩晶把南科廠房賣給誰？',['台積電','矽品','群創'],1,'日月光旗下矽品，43.2 億，處分利益約 21.6 億，第三季認列。'],
+    ['哪類客戶最在意 EOL 與 LTB？',['手機品牌','工控與醫療','電視品牌'],1,'工控與醫療產品生命週期 5 到 10 年，換面板等於重新認證。'],
+  ];
+  const box=$('#quiz');let score=0,done=0;
+  Q.forEach((q,i)=>{const d=document.createElement('div');d.className='q';d.innerHTML=`<b>${i+1}. ${q[0]}</b>`+q[1].map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join('')+`<div class="exp">${q[3]}</div>`;
+    $$('.opt',d).forEach(b=>b.addEventListener('click',()=>{if(d.classList.contains('done'))return;d.classList.add('done');const j=+b.dataset.j;if(j===q[2]){b.classList.add('ok');score++;}else{b.classList.add('no');$$('.opt',d)[q[2]].classList.add('ok');}done++;
+      if(done===Q.length){$('#quiz-score').style.display='block';$('#quiz-score-text').textContent=`答對 ${score} / ${Q.length} 題。`+(score>=8?'可以上班了。':'回頭看一下答錯的那幾頁。');}}));
+    box.appendChild(d);});
+})();
+})();
+</script>
+</body>
+</html>
