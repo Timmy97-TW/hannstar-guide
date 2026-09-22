@@ -170,6 +170,43 @@ svg text{font-family:inherit}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap}
 .pill{padding:6px 12px;border-radius:10px;font-size:13px;font-weight:700;background:var(--soft)}
+/* quiz v2 */
+.qbtn{border:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer}
+.qbtn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.qbtn.ghost:hover{background:var(--soft)}
+.qbtn:disabled{opacity:.4;cursor:default}
+.chap{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;cursor:pointer;background:#fff;box-shadow:var(--shadow);border-top:5px solid var(--brand);transition:transform .15s}
+.chap:hover{transform:translateY(-2px)}
+.chap .cn{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em}
+.chap h4{font-size:18px;font-weight:900;margin:4px 0 6px}
+.chap p{font-size:13px;color:var(--muted);margin:0 0 10px}
+.chap .cs{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+.chap .cs b{color:var(--ink)}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.qprog{font-size:14px;color:var(--muted);display:flex;gap:12px;align-items:baseline}
+.qprog span:first-child{font-weight:900;color:var(--ink);font-size:16px}
+.qcard{border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);background:#fff}
+.qcard .qq{font-size:20px;font-weight:900;line-height:1.4;margin-bottom:16px}
+.qcard .qq small{display:block;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.08em;margin-bottom:6px}
+.qcard .opt{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;padding:13px 16px;border-radius:12px;margin-bottom:8px;cursor:pointer;font-size:15px;font-family:inherit;color:var(--ink)}
+.qcard .opt:hover{background:var(--soft)}
+.qcard .opt.ok{background:var(--green-soft);border-color:var(--green)}
+.qcard .opt.no{background:var(--red-soft);border-color:var(--red)}
+.qcard .opt:disabled{cursor:default}
+.learn{margin-top:16px;border-radius:12px;padding:16px 18px;background:var(--brand-soft);border-left:4px solid var(--brand)}
+.learn.wrong{background:var(--amber-soft);border-color:var(--amber)}
+.learn .lt{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--brand)}
+.learn.wrong .lt{color:var(--amber)}
+.learn h5{font-size:16px;font-weight:900;margin:4px 0 6px}
+.learn p{font-size:14px;margin:0 0 6px}
+.learn .kf{font-size:13px;color:var(--muted);padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);margin-top:8px}
+.learn .kf b{color:var(--ink)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap}
+.qsum .sc{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1}
+.qsum .wl{margin-top:16px}
+.qsum .wi{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;font-size:14px}
+.qsum .wi b{display:block;margin-bottom:4px}
+.qsum .wi span{color:var(--muted);font-size:13px}
 footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:12px;color:var(--muted)}
 .src{font-size:12px;color:var(--muted);margin-top:10px}
 .big-q{font-size:20px;font-weight:900;margin-bottom:4px}
@@ -255,7 +292,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:12px;color
     <div class="card soft"><h4>02 面板技術</h4><p>點開 LCD 的七層結構，看懂世代線與切割，比較 LCD、OLED、電子紙。</p></div>
     <div class="card soft"><h4>03 術語庫</h4><p>60 個會在信件、規格書、會議中出現的詞，每個附業務情境。</p></div>
     <div class="card soft"><h4>04 到 07</h4><p>誰供貨、誰買貨、台灣面板 30 年興衰、彩晶的位置與 2026 年的變局。</p></div>
-    <div class="card soft"><h4>08 業務實務</h4><p>從詢價到停產的流程、規格表怎麼讀、消費品與車載客戶的差別。</p></div>
+    <div class="card soft"><h4>08 業務實務 · 09 測驗</h4><p>從詢價到停產的流程、規格表怎麼讀、客戶差別。測驗分七章，答錯也會看到完整說明。</p></div>
   </div>
 </section>
 <!-- ============ 02 面板技術 ============ -->
@@ -802,11 +839,34 @@ footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:12px;color
 <section class="tab" id="tab-quiz">
   <div class="sec-head">
     <div class="kicker">Quiz</div>
-    <h2>十題自我檢查</h2>
-    <p class="lede">看完前面八頁，這十題應該能答對八題以上。</p>
+    <h2>分章節測驗</h2>
+    <p class="lede">七個章節，共 <span id="qz-total">0</span> 題。每題作答後都會出現學習卡，答錯也會看到完整的答案與背後的道理。進度會記在這台裝置的瀏覽器裡。</p>
   </div>
-  <div class="quiz" id="quiz"></div>
-  <div class="card soft" id="quiz-score" style="display:none"><h4 id="quiz-score-text"></h4></div>
+
+  <div id="qz-dash">
+    <div class="card soft" style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h4 style="margin:0">整體進度</h4>
+        <span id="qz-overall" class="note"></span>
+      </div>
+      <div class="bar" style="margin-top:8px;height:12px"><i id="qz-overall-bar" style="width:0"></i></div>
+      <div class="pill-row" style="margin-top:12px">
+        <button class="qbtn" id="qz-mixed">綜合測驗：隨機 20 題</button>
+        <button class="qbtn ghost" id="qz-wrong">重做所有錯題</button>
+        <button class="qbtn ghost" id="qz-reset">清除進度</button>
+      </div>
+    </div>
+    <div class="grid g3" id="qz-chapters"></div>
+  </div>
+
+  <div id="qz-play" style="display:none">
+    <div class="qtop">
+      <button class="qbtn ghost" id="qz-back">← 回章節列表</button>
+      <div class="qprog"><span id="qz-chapname"></span><span id="qz-count"></span></div>
+    </div>
+    <div class="bar" style="margin:10px 0 18px;height:8px"><i id="qz-bar" style="width:0"></i></div>
+    <div id="qz-card"></div>
+  </div>
 </section>
 
 </main>
@@ -1158,25 +1218,185 @@ const TERMS=[
 /* ---------- spec rows ---------- */
 $$('#spec tbody tr').forEach(tr=>tr.addEventListener('click',()=>{$$('#spec tbody tr').forEach(x=>x.style.background='');tr.style.background='var(--brand-soft)';$('#spec-info').innerHTML=`<div class="tag">規格解讀</div><h4>${tr.dataset.k}</h4><p>${tr.dataset.d}</p>`;}));
 
-/* ---------- quiz ---------- */
+/* ---------- quiz v2 ---------- */
 (function(){
-  const Q=[
-    ['LCD 面板自己會發光嗎？',['會，每個像素都是光源','不會，靠背光模組','只有 IPS 會'],1,'LCD 是控制透光的百葉窗，光來自背光模組。自發光的是 OLED 與 Micro LED。'],
-    ['彩晶南科廠是幾代線？',['3.5 代','5.3 代','8.6 代'],1,'一條 5.3 代 a-Si 線，月產能約 14 萬片玻璃基板。'],
-    ['面板「世代」的數字代表什麼？',['技術新舊','玻璃基板尺寸','解析度等級'],1,'只跟玻璃基板大小有關。G8.6 是 2250×2600 mm。'],
-    ['彩晶的主力 TFT 製程是？',['LTPS','IGZO','a-Si'],2,'非晶矽，最成熟也最便宜，但也是中國 8.6 代線正在切入的區段。'],
-    ['2025 年前三季，車載加工控佔彩晶營收約多少？',['20%','50%','80%'],1,'約五成，手機約 35%，平板 8 到 10%。2027 年目標車載單獨超過三成。'],
-    ['面板五虎中，哪一家在 2019 年聲請破產？',['廣輝','中華映管','統寶'],1,'華映負債 418 億，2019 年聲請、2022 年法院裁定破產。'],
-    ['TDDI 是什麼？',['一種背光技術','觸控與驅動整合的 IC','一種玻璃厚度'],1,'Touch and Display Driver Integration。彩晶穿戴面板用 TDDI 為全球首發。'],
-    ['要進入車廠供應鏈，面板廠必須有哪張認證？',['ISO 13485','IATF 16949','IEC 60945'],1,'IATF 16949 是汽車業品質管理系統。ISO 13485 是醫療，IEC 60945 是海事。'],
-    ['2026 年 4 月，彩晶把南科廠房賣給誰？',['台積電','矽品','群創'],1,'日月光旗下矽品，43.2 億，處分利益約 21.6 億，第三季認列。'],
-    ['哪類客戶最在意 EOL 與 LTB？',['手機品牌','工控與醫療','電視品牌'],1,'工控與醫療產品生命週期 5 到 10 年，換面板等於重新認證。'],
+  // 每題：[題目, 選項, 正解索引, 解說, 關鍵一句]
+  const CH=[
+   {id:'tech',n:'01',t:'面板技術',tab:'tech',c:'#0f5fa8',d:'LCD 結構、製程、世代線、觸控',q:[
+    ['LCD 面板自己會發光嗎？',['會，每個像素都是光源','不會，光來自背光模組','只有 IPS 面板會發光'],1,'LCD 是一片控制「讓多少光通過」的百葉窗，後面放一盞燈。燈就是背光模組（BLU），由 LED、導光板與光學膜片組成。自發光的是 OLED 與 Micro LED，它們不需要背光。','背光模組是 LCD 功耗與成本的最大來源之一。'],
+    ['七層結構中，哪一層決定面板廠的「製程」與成本？',['背光模組','TFT 陣列玻璃','上偏光片','蓋板玻璃'],1,'TFT 陣列玻璃上有數百萬顆薄膜電晶體，每個子像素一顆開關。用非晶矽（a-Si）、低溫多晶矽（LTPS）或氧化物（IGZO）來做，就是面板廠所謂的製程。前段廠也叫 Array 廠。','彩晶的 TFT 製程是 a-Si，一條 5.3 代線。'],
+    ['彩晶 100% 自製的關鍵材料是哪一項？',['偏光片','驅動 IC','彩色濾光片','玻璃基板'],2,'彩色濾光片（CF）把白光濾成紅綠藍子像素，做在上層玻璃上。多數面板廠自製，彩晶也是。偏光片、驅動 IC、玻璃基板、背光模組都向外採購。','自製 CF 代表少一道外購，成本與交期自己掌握。'],
+    ['面板「世代」（Generation）的數字代表什麼？',['技術新舊','玻璃基板的尺寸','解析度等級','液晶種類'],1,'世代只跟玻璃基板大小有關，跟技術新舊無關。G5.3 約 1200×1300 mm，G8.6 是 2250×2600 mm，G10.5 是 2940×3370 mm。越大的玻璃切大尺寸越划算。','世代越大，單片攤到的製程時間與折舊越少。'],
+    ['彩晶南科廠的世代與玻璃基板尺寸約是？',['G3.5，600×720 mm','G5.3，約 1200×1300 mm','G8.6，2250×2600 mm','G10.5，2940×3370 mm'],1,'彩晶只有一條 5.3 代 a-Si 前段線，月產能約 14 萬片玻璃基板。同尺寸面板在 8.6 代線上切，單片成本更低，這是 5 代線的結構性壓力。','5 代線的競爭力剩下靈活切割、少量多樣、特殊規格。'],
+    ['a-Si（非晶矽）製程的特色是？',['解析度最高、成本最貴','最成熟、最便宜，但解析度與功耗有上限','只能做 OLED','只能做大尺寸電視'],1,'a-Si 是最成熟、良率最高、供應鏈最完整的 TFT 製程，用在低階手機、平板、車載、工控。缺點是電子移動率低，做高解析度與窄邊框吃力。','a-Si 也是中國 8.6 代線正在切入、價格競爭最激烈的區段。'],
+    ['LTPS（低溫多晶矽）的優勢是什麼？彩晶有沒有？',['低成本；彩晶有','高解析度、窄邊框、低功耗；彩晶沒有','適合大尺寸電視；彩晶有','不需要背光；彩晶沒有'],1,'LTPS 的電子移動率是 a-Si 的百倍，可做高解析度、窄邊框、低功耗，是中高階手機與車載儀表主流。製程步驟多、成本高。彩晶沒有 LTPS 線，這類案子接不到。','客戶要求 FHD 以上的小尺寸面板時，先確認 a-Si 做不做得到。'],
+    ['為什麼 IPS 是車載與平板的主流液晶模式？',['最便宜','各角度色彩一致，觸控按壓不泛白','對比最高','反應最快'],1,'IPS（橫向電場）四個方向可視角 178 度且色彩一致，按壓時不泛白。TN 最便宜、反應最快但側看變色；VA 對比高，多用於電視。彩晶自家版本叫 IPS Pro。','規格書寫 85/85/85/85，就是上下左右各 85 度仍符合對比規範。'],
+    ['TDDI 是什麼？',['一種背光技術','觸控與驅動整合成一顆 IC，做進 TFT 層','一種玻璃厚度','一種貿易條件'],1,'Touch and Display Driver Integration。觸控感測做進 TFT 陣列（in-cell），驅動與觸控合為一顆 IC。最薄、最便宜，良率靠面板廠。彩晶的穿戴面板採用 TDDI 為全球首發。','IC 供應商：敦泰、聯詠、奇景。'],
+    ['三種觸控整合方式，哪一種最薄、成本最低？',['外掛式（GFF / OGS）','On-cell','In-cell / TDDI'],2,'外掛式是獨立零件貼在面板上，最厚、多一層成本。On-cell 把觸控層鍍在彩色濾光片玻璃外側。In-cell 把觸控做進 TFT 層，最薄最便宜。','車載案子通常還要加光學貼合，把層間空氣填滿膠。'],
+    ['Open Cell 與 LCM 的差別是？',['Open Cell 含背光，LCM 不含','Open Cell 只有面板本體，LCM 加上背光、驅動 IC、軟板可直接裝機','兩者相同','LCM 只用於電視'],1,'Open Cell（裸面板）只含 TFT 玻璃、液晶、彩色濾光片與偏光片，客戶自組背光與驅動板，單價低。LCM（液晶模組）可直接裝機，單價高。彩晶南京廠與南科模組線負責後段。','談報價前先確認客戶要的是 open cell 還是模組。'],
+    ['Mini LED 面板是什麼？',['一種自發光面板','LCD 加上分區調光的 LED 背光','一種電子紙','一種觸控技術'],1,'Mini LED 是把 LCD 的背光做成上千顆可分區控制的小 LED，黑的地方把燈關掉，對比與亮度大幅提升。它仍是 LCD，不是自發光。Micro LED 才是每個像素一顆 LED 的自發光技術。','彩晶有車載 Mini LED 局部調光方案。'],
+    ['反射式 LCD 的優點是？',['色彩最鮮豔','不用背光，功耗極低，戶外可讀','解析度最高','成本最低'],1,'反射式 LCD 靠環境光反射顯示，不用背光，功耗極低、太陽下清晰、護眼。缺點是色彩淡、暗處需前光。與電子紙（元太）、膽固醇液晶競爭。','彩晶的 ECO Vision Display（EVD）護眼屏走這個方向。'],
+    ['OLED 相對 LCD 的主要弱點是？',['太厚','燒屏、壽命、價格','不能做手機','需要背光'],1,'OLED 自發光，薄、黑色純、可彎曲，但有燒屏與壽命問題，價格也高。它是高階手機與穿戴主流，也是 a-Si LCD 手機面板最大的威脅。','a-Si LCD 手機面板只剩功能機與低價機市場。'],
+   ]},
+   {id:'terms',n:'02',t:'術語',tab:'terms',c:'#6b4fbb',d:'規格、製程、商務詞彙',q:[
+    ['nits 是什麼單位？車載面板通常要求多少？',['亮度單位；車載 800 到 1000 以上','解析度單位；車載 400','對比單位；車載 1000:1','厚度單位；車載 0.25'],0,'nits（cd/m²）是面板正面的發光強度。消費品 300 到 500，車載與戶外 800 到 1000 以上，HUD 要到萬級。亮度由背光決定，要求高亮就是要求更多 LED、更高功耗與成本。','亮度與功耗互相衝突，解法是提高穿透率或改反射式。'],
+    ['NTSC 72% 大約等於？',['sRGB 50%','sRGB 100%','DCI-P3 100%','無法換算'],1,'色域描述能顯示的顏色範圍。a-Si 面板常見 NTSC 50% 到 72%，NTSC 72% 約等於 sRGB 100%。兩種標準換算方式不同，報規格時要寫清楚基準。','客戶指定 sRGB 100% 時，先確認彩色濾光片與背光可行。'],
+    ['規格書上的「85/85/85/85」是指什麼？',['四邊邊框寬度','上下左右可視角各 85 度','四種亮度等級','四個溫度點'],1,'視角指偏離正面多少度仍維持規範對比。IPS 四方向 85 度以上；TN 上下視角差，車載幾乎不接受。','視角是 IPS 成為車載主流的原因。'],
+    ['Mura 是什麼？',['一種液晶材料','畫面亮度或色彩不均的瑕疵','一種貿易條件','一種驅動 IC'],1,'Mura 來自日文「斑」，指肉眼可見的亮度或色彩不均。它是客戶驗收最常退貨的原因之一。不同客戶的 Mura 標準差異很大，開案時要先取得驗收規範。','亮點暗點是另一類外觀瑕疵，車載與醫療常要求零亮點。'],
+    ['稼動率的定義是？低於多少折舊就攤不掉？',['良品 ÷ 投入；低於 90%','實際投片 ÷ 產能；低於約 70%','出貨 ÷ 訂單；低於 50%','營收 ÷ 資本；低於 100%'],1,'稼動率是實際投片數除以產能。面板廠固定成本高，稼動率低於七成，折舊照攤，就是虧損的來源。彩晶 2026 年策略的「全產全銷」就是稼動率 100% 且全部賣掉。','稼動率是看面板廠損益的第一個指標。'],
+    ['手機與平板面板常用的訊號介面是？',['LVDS','MIPI','eDP','SPI'],1,'LVDS 用於工控與車載，MIPI 用於手機平板，eDP 用於筆電。介面由客戶主機板決定，改介面等於重做驅動板與韌體。','詢價時要問清楚介面，不然報價會落空。'],
+    ['光學貼合（Optical Bonding）的目的是？',['讓面板更便宜','填滿層間空氣層，減少反光、增加強度、防霧氣','讓面板可以彎曲','取代背光'],1,'用光學膠填滿蓋板、觸控與面板之間的空氣層。減少反光、提升強度、防止霧氣。車載幾乎必備，成本與良率是挑戰。','完整的「觸控顯示模組」= LCM + 觸控 + 蓋板 + 光學貼合。'],
+    ['NRE 是什麼費用？',['每月固定運費','一次性工程費用，用於客製設計、光罩、開模','年度授權費','退貨處理費'],1,'Non-Recurring Engineering。客製面板要收 NRE，數量大時可攤入單價。能用現有型號對應，就不用 NRE，交期也短。','業務的價值之一是判斷哪些規格能用現有型號對應。'],
+    ['小尺寸面板的 MOQ 下限由什麼決定？',['客戶的預算','一片母玻璃切下來的數量','海運貨櫃大小','驅動 IC 的包裝'],1,'前段一次投片就是一整片玻璃，切下來的量就是最小訂購量的下限。世代越大、面板越小，這個數字越大。','7 吋面板在 G5.3 一片玻璃能切近百片。'],
+    ['客戶 Forecast 給太高會發生什麼？',['缺貨','工廠多投片，變成庫存','價格上漲','交期縮短'],1,'工廠依滾動預估投片。預估過高變庫存，過低就缺貨。Forecast 準確度是量產期業務的核心工作。','前段投片三到四週，下單到面板出來至少一個月。'],
+    ['EOL 與 LTB 分別是？',['開案 / 報價','停產通知 / 最後一次購買','出貨 / 退貨','樣品 / 量產'],1,'End of Life 是停產通知，Last Time Buy 是最後採購機會。標準做法是提前 6 到 12 個月通知並開放 LTB。工控與醫療客戶最在意這件事，因為換面板等於重新認證。','處理得好，客戶會把下一代產品也給你。'],
+    ['PCN 什麼時候要發？',['只有漲價時','任何材料、製程、產地變更時','只有停產時','只有客戶要求時'],1,'Product Change Notice。任何材料、製程、產地的變更都要事先通知客戶。車載客戶需要重新驗證，PCN 要提早幾個月發。','2026 年的產線調整若涉及產地，就是 PCN 事件。'],
+    ['8D 報告是什麼？',['八個尺寸的規格表','客戶退貨後的八步驟問題解決報告','八週交期承諾','八國語言說明書'],1,'8 Disciplines。客訴或退貨（RMA）後由品保出具，業務負責協調與追蹤。車載客戶要求 24 小時內初步回覆。','ppm 是百萬分之不良率，車載目標 0 ppm。'],
+    ['ASP 是什麼？產品組合往車載搬會怎樣？',['平均售價；ASP 上升','平均庫存；下降','平均交期；縮短','平均良率；上升'],0,'Average Selling Price。車載與工控面板單價高於手機平板，組合往那邊搬，ASP 上升，財報上看得到。','彩晶 2026 上半年毛利為負，轉正是全公司目標。'],
+    ['ES、CS、MP 分別是什麼階段？',['估價、確認、量產','工程樣品、客戶樣品、量產','交貨、驗收、付款','設計、認證、停產'],1,'Engineering Sample 驗證設計，Customer Sample 給客戶裝機測試，Mass Production 量產。中間常有 PVT 試產驗證。每個階段客戶要簽核，車載會在 CS 之後走 PPAP。','樣品交期是客戶最緊盯的時程。'],
+   ]},
+   {id:'chain',n:'03',t:'產業鏈',tab:'chain',c:'#0b8a7c',d:'上下游、成本、循環、市占',q:[
+    ['以下哪些是面板廠自己能控制的？',['偏光片價格','玻璃基板價格','良率、稼動率、彩色濾光片','驅動 IC 交期'],2,'材料裡最大的背光、驅動 IC、偏光片都是外購。面板廠能掌握的是良率、稼動率，以及自製的彩色濾光片。稼動率低，折舊照攤，這就是虧損來源。','材料佔模組成本六到七成，折舊與製造費用佔兩到三成。'],
+    ['玻璃基板的主要供應商是？',['聯詠、奇景','康寧、旭硝子、電氣硝子','日東、住友','瑞儀、中光電'],1,'無鹼玻璃基板由康寧、旭硝子（AGC）、電氣硝子（NEG）供應。厚度 0.5、0.4、0.3、0.25 mm，0.25t 用於穿戴與輕薄模組。','偏光片是日東、住友、LG 化學、杉金；背光是瑞儀、中光電。'],
+    ['台灣的驅動 IC 與 TDDI 供應商有哪些？',['康寧、旭硝子','聯詠、奇景、瑞鼎、敦泰','默克、JNC','研華、樺漢'],1,'驅動 IC 把影像訊號轉成每列每行的電壓。聯詠、奇景、瑞鼎是台灣主要供應商，敦泰專長 TDDI。2021 年缺 IC 曾讓面板出不了貨。','車規驅動 IC 要 AEC-Q100 版本，價格與交期不同。'],
+    ['中小尺寸模組成本中最大的一項通常是？',['液晶材料','背光模組','玻璃基板','彩色濾光片'],1,'示意比例：背光模組約 22%、驅動 IC 12%、偏光片 12%、玻璃 7%、CF 材料 8%、液晶與其他 11%，折舊與製造費用約 28%。車載與觸控模組的背光與貼合成本更高。','材料成本大多不在面板廠手上，能省的是製造端。'],
+    ['面板的後段模組（LCM）廠為什麼多設在中國或東南亞？',['因為玻璃在那裡生產','後段勞力密集，人力成本低','因為客戶都在那裡','因為法規要求'],1,'前段 Array / Cell 資本密集，一條線數百億；後段貼偏光片、接 IC、裝背光、觸控貼合是勞力密集。彩晶前段在南科，後段在南京瀚宇彩欣與南科模組線。','客戶問產地時，要分前段與後段回答。'],
+    ['以下哪一家是車用 Tier 1？',['京東方','電裝（Denso）','康寧','聯詠'],1,'Tier 1 是直接供貨給車廠的系統廠，如電裝、大陸集團、博世、德賽西威、佛吉亞。面板廠多為 Tier 2，客戶是 Tier 1，但車廠常會指定面板供應商。','進 Tier 1 的入門票是 IATF 16949。'],
+    ['液晶循環（Crystal Cycle）大約多久一輪？成因是？',['半年；季節','兩到四年；產線蓋兩三年，需求變化只要幾個月','十年；技術世代','沒有循環'],1,'所有廠商在好光景時同時擴產，產能一起開出時價格崩跌。2020 到 2021 缺貨漲價，2022 到 2023 需求反轉，2024 到 2025 溫和回升。中小尺寸振幅比電視面板小，方向一致。','面板廠的損益表跟著這條曲線走。'],
+    ['客戶談價時拿什麼當基準？',['彩晶的財報','TrendForce（WitsView）、Omdia 每月公布的面板報價','股價','海運費'],1,'研究機構每月公布各尺寸面板價格，消費性客戶會拿它與中國廠報價來比。業務要知道自家產品在報價表上的參考位置。','車載與工控談的是總擁有成本與供貨風險，不只價格。'],
+    ['2024 年中國廠商佔全球手機面板出貨約多少？',['30%','50%','70%','90%'],2,'2024 年 69.8%，2025 年估超過 70%。京東方 6.13 億片居首，惠科 2.28 億片（a-Si，8.6 代線）、華星 2.15 億片、天馬 1.58 億片。','惠科是低階 a-Si 手機面板的價格殺手。'],
+    ['2026 年友達與群創各佔全球 LCD 產能約多少？',['約 9%','約 20%','約 35%','約 50%'],0,'集邦估計 2026 年友達 9.2%、群創 9.1%。2028 年中國 LCD 產能佔比將達 75%，台灣降到 16%，日韓剩個位數。','彩晶與凌巨合計不到 1%。'],
+    ['天馬（Tianma）對彩晶的意義是？',['玻璃供應商','車載市場的直接對手','客戶','集團關係企業'],1,'天馬以 LTPS 與 AMOLED 為主，車載面板全球前幾名，是彩晶車載轉型路上的直接對手。京東方、友達、群創、JDI 也在車載市場。','車載對手多半有 LTPS，彩晶只有 a-Si。'],
+    ['中國四大廠合計佔全球電視面板出貨約多少？',['30%','50%','72%','90%'],2,'京東方 27.0%、華星 24.5%、惠科 17.7%，合計超過七成。電視面板全部往 8.5 代以上集中，這是台廠退出大尺寸的原因。','大尺寸只有大世代才划算。'],
+   ]},
+   {id:'history',n:'04',t:'台灣面板史',tab:'history',c:'#d9931e',d:'技轉、五虎、整併、中國崛起',q:[
+    ['台灣最早投入 TFT-LCD 的公司是？',['奇美電子','聯友光電','瀚宇彩晶','群創光電'],1,'聯友光電 1990 年成立，屬聯電集團。之後達碁（1996，明基）、奇美電（1997）、華映（1997 轉 TFT）、彩晶（1998）、統寶與廣輝（1999）陸續加入，一口氣七家。','1976 年敬業電子引進休斯技術做電子錶 TN LCD，是台灣 LCD 的起點。'],
+    ['瀚宇彩晶 1998 年由哪個集團投資成立？技術來源是？',['鴻海；夏普','華新麗華；東芝與日立','大同；三菱','廣達；夏普'],1,'華新麗華集團投資，透過東芝與日立技術移轉取得 TFT-LCD 製造技術。當時政府大力推動，銀行聯貸湧入。','達碁用 IBM 日本技術，奇美用富士通，華映用三菱，廣輝用夏普。'],
+    ['2002 年的「面板五虎」，哪一家不在其中？',['友達','奇美電','群創','華映'],2,'2002 年五虎是友達、奇美電、廣輝、華映、彩晶。群創 2003 年才由鴻海支持段行建成立，2006 年廣輝被友達併購後，群創才補上成為新五虎。','彩晶是五虎中唯一沒被合併也沒倒閉的一家。'],
+    ['友達光電是由哪兩家合併而成？',['奇美電 + 群創','聯友 + 達碁','廣輝 + 統寶','華映 + 彩晶'],1,'2001 年聯友與達碁合併成友達，是台灣面板史第一樁大合併。2006 年友達再併廣輝，躍居全球前三。','2001 年同時是網路泡沫，面板價格首度崩跌。'],
+    ['2010 年三合一的「新奇美電」由哪三家組成？',['友達、廣輝、聯友','群創、奇美電、統寶','華映、彩晶、元太','京東方、華星、惠科'],1,'2009 年 11 月宣布、2010 年完成，群創併奇美電與統寶，產能超越友達。2012 年更名群創光電。五虎自此變雙虎。','台灣面板史三大合併：友達（2001）、友達併廣輝（2006）、群創三合一（2010）。'],
+    ['哪一家面板廠在 2019 年聲請破產？',['廣輝','中華映管','統寶','凌巨'],1,'華映負債 418 億，2018 年財務危機、淨值轉負，2019 年 9 月聲請破產，2022 年 8 月法院裁定。它曾是大同集團旗下、成立於 1971 年的老牌廠。','沒有品牌、沒有補貼、世代落後的廠最先退場。'],
+    ['元太科技從 2005 年起轉做什麼？',['車載面板','電子紙','OLED','半導體封裝'],1,'元太 1992 年成立，2005 年起轉向電子紙，成為全球龍頭。它是台灣面板廠轉型成功的案例。反射式 LCD 與電子紙在低功耗市場競爭。','彩晶的 EVD 護眼屏與元太的電子紙在同一個需求市場。'],
+    ['2010 年歐盟對 LCD 業者裁罰的原因是？彩晶被罰多少？',['環保違規；100 萬歐元','價格壟斷（卡特爾）；810 萬歐元','關稅逃漏；1 億歐元','專利侵權；免罰'],1,'2010 年 12 月歐盟裁罰 LCD 價格壟斷案共 6.49 億歐元，彩晶被罰 810 萬歐元。這是面板業「同時擴產、同時談價」年代的產物。','業務與同業交換價格資訊有法律風險。'],
+    ['中國 LCD 產能在哪一年超越韓國？',['2008','2012','2017','2022'],2,'2013 到 2016 年京東方、華星在政府補貼下狂建 8.5 代線，2017 年中國 LCD 產能超越韓國，京東方成為全球最大 LCD 廠。10.5 代線開出後電視面板價格長期下行。','2020 年三星、LG 宣布退出 LCD。'],
+    ['2020 到 2021 年面板業為什麼全面獲利？',['關稅取消','疫情帶動遠距工作與教學需求，面板漲價一年多','中國廠停產','OLED 失敗'],1,'疫情紅利期彩晶 2020 年營收 195.5 億、淨利 38.5 億、EPS 1.25，2021 年第二季單季 EPS 0.91。2022 年通膨與庫存壓力讓需求反轉，價格重挫。','2022 到 2025 年彩晶連續四年虧損。'],
+    ['以下哪一項「不是」台灣面板業走到今天的結構原因？',['沒有自家品牌吃產能','中國有政府補貼','世代線落後','台灣工程師技術不足'],3,'四個結構原因：沒有品牌（三星、LG、海信、TCL 有）、補貼落差（中國出地出資補電費）、世代落後（台灣最大 8.5 代，中國有多條 10.5 與 8.6 代）、景氣同步（同時擴產同時虧）。技術本身不是問題。','台灣面板廠現在的出路是賣舊廠、跨入封裝與矽光子，或守利基。'],
+    ['2024 到 2026 年，群創與友達在做什麼？',['擴建 10.5 代線','賣舊廠、跨入半導體封裝與矽光子','合併成一家','全面轉做 OLED'],1,'群創賣廠給台積電等，2026 年前四月處分利益近 200 億，做扇出型面板級封裝（FoPLP）；友達推矽光子與場域解決方案，車用出貨全球前三。彩晶沒有第二曲線，仍在面板內找更好賺的產品。','媒體用「揮別面板廠時代」形容雙虎。'],
+   ]},
+   {id:'hannstar',n:'05',t:'彩晶解析',tab:'hannstar',c:'#c9463d',d:'公司、集團、財務、事件',q:[
+    ['瀚宇彩晶的股票代號與上市年份？',['2409，2000 年','6116，2004 年','3481，2006 年','5469，1998 年'],1,'彩晶 1998 年 6 月成立，2004 年 9 月在台灣證交所掛牌，代號 6116。資本額約 285.9 億，總部在台北內湖。','2409 是友達，3481 是群創，5469 是瀚宇博德。'],
+    ['彩晶的董事長兼執行長是誰？屬於哪個集團？',['焦佑倫；華新麗華','焦佑麒；華新麗華','段行建；鴻海','林蔚山；大同'],1,'焦佑麒是華新麗華創辦人焦廷標的第四子，同時是瀚宇博德董事長。焦家透過華新麗華與投資公司交叉持股，對彩晶有絕對控制權。兄弟分掌集團：焦佑倫（華新麗華）、焦佑鈞（華邦電子）。','2026 年 9 月起焦佑麒暫代總經理。'],
+    ['彩晶南科廠的月產能約多少？',['1.4 萬片','14 萬片','140 萬片','1,400 萬片'],1,'一條 5.3 代 TFT-LCD 廠，月產能約 14 萬片玻璃基板，彩色濾光片 100% 自製。這是京東方單一 8.6 代廠的零頭。','規模小，所以生存方式是大廠不願做的小量、特殊、長週期案子。'],
+    ['南京瀚宇彩欣做什麼？',['前段 TFT 陣列','後段 LCM 模組與觸控','玻璃基板','品牌行銷'],1,'南京廠負責液晶面板後段模組工程與觸控產品。2019 年因中美貿易戰，彩晶又在南科新建車載模組線，提供非中國產地選項。','客戶問產地時：前段台灣南科，後段南京或南科。'],
+    ['Hannspree（瀚斯寶麗）是什麼？',['彩晶的玻璃供應商','彩晶 2002 年創立的自有品牌，總部荷蘭','華映的品牌','一種面板型號'],1,'2002 年成立，總部荷蘭、設計中心台北，賣顯示器、平板等。HannsG（瀚視奇）是另一個顯示器品牌，走歐洲通路。EVD 護眼 23.8 吋顯示器 2026 年第一季由 Hannspree 在歐洲販售。','若前段退場，品牌與模組業務可能是留下的部分。'],
+    ['2020 年彩晶的營收與 EPS 約是？',['114 億，-0.75','195.5 億，1.25','60 億，0.04','300 億，3.0'],1,'疫情紅利年：營收 195.5 億、淨利 38.5 億、EPS 1.25，為近三年新高。2021 年第二季單季 EPS 0.91。之後 2022 年 -0.86、2024 年 -1.86、2025 年 -0.75。','2025 年營收 114.4 億，年增 15%，但仍虧 21.4 億。'],
+    ['2022 到 2025 年，彩晶的損益狀況是？',['連續四年獲利','連續四年虧損','損益兩平','只有 2024 年虧損'],1,'四年 EPS 依序約 -0.86、-0.5、-1.86、-0.75。2024 年上半年資遣 180 人。2026 年上半年營收 60.85 億、毛利為負、營業損失 9.27 億，但第二季單季 EPS 轉正 0.04。','虧損收斂中，靠的是產品組合搬家與資產處分。'],
+    ['2019 年彩晶回台建了什麼產線？原因是？',['OLED 線；追高階','車載模組線；中美貿易戰分散製造','10.5 代線；做電視','電子紙線；轉型'],1,'在南科投資車載面板模組線，年底投產。當年目標：手機比重降到五成以下（過去超過七成），日系車用客戶開始放量，歐洲客戶小量供貨。','這是彩晶車載轉型的起點。'],
+    ['2025 年前三季，彩晶營收中車載加工控佔多少？手機呢？',['車載工控 20%，手機 70%','車載工控約 50%，手機約 35%','車載工控 80%，手機 10%','各 50%'],1,'工控與車載約 50%，智慧型手機與功能機約 35%，平板 8 到 10%。2026 年目標：車載 30%、工控 30% 到 35%，消費性壓到兩成以下。','2027 年目標車載單獨超過三成。'],
+    ['2026 年 4 月彩晶賣出南科廠房，買方與金額是？',['台積電，100 億','矽品（日月光旗下），43.2 億','群創，20 億','華新麗華，43.2 億'],1,'4 月 30 日董事會決議，善化區廠房與附屬設施約 2.8 萬坪，議價 43.2 億，處分利益約 21.6 億，第三季認列。公告未提及租回安排或產線去留。','賣的是不動產，產線去留以公司正式公告為準。'],
+    ['2026 年 9 月 11 日彩晶發生什麼人事變動？',['董事長請辭','總經理陳盛中請辭，董事長焦佑麒暫代','業務副總請辭','更換會計師'],1,'陳盛中 2025 年 11 月中接任總經理，任期未滿一年以個人生涯規劃請辭。隨後媒體報導第四季投片砍至約五成、優離 700 到 800 人、約 140 名移工資遣，公司未證實，稱為例行人力調整。','客戶會問供貨延續性，回答以公司公告為準。'],
+    ['彩晶「全球首發」的 TDDI 應用在哪類面板？',['電視','穿戴裝置','車載中控','筆電'],1,'穿戴面板搭載 TDDI 觸控整合方案為全球首發。其他重點技術：IPS Pro、IGD 閘極驅動整合、0.25t 超薄玻璃、EVD 護眼屏、車載 Mini LED 局部調光、防窺與軟性防窺面板。','穿戴市場正被 OLED 大量取代，是挑戰也是利基。'],
+    ['彩晶最明顯的結構劣勢是？',['沒有客戶','只有一條 5.3 代線，沒有 LTPS 與 OLED','員工太多','沒有品牌'],1,'單片成本輸 8.6 代線，高解析度案子接不到，連續四年虧損，人力與管理層動盪讓客戶擔心供貨延續性。優勢是二十年中小尺寸經驗、CF 自製、車載已進日系與歐系供應鏈、集團資產可活化。','SWOT 的每一格都會變成客戶的問題。'],
+    ['2025 年 12 月法說會後，彩晶對 2026 年的核心用語是？',['全面擴產','全產全銷','退出面板','併購同業'],1,'2026 年策略：5.3 代 a-Si 線全產全銷，發展觸控、防窺、低功耗整合技術，調整模組線與供應鏈，開發自主關鍵零組件，拓展中國與全球車用市場，優化車用模組全自動線。','全產全銷的意思是稼動率與庫存都要健康。'],
+    ['彩晶車載的新案源包括哪些？',['電視、筆電','HUD、電子後視鏡、乘客屏、二輪車儀表','電子書、標籤','伺服器面板'],1,'車內螢幕從一片中控變成儀表、中控、副駕、後座、HUD、電子後視鏡。二輪車儀表由段碼屏改為 TFT 彩屏。無人機遙控器與穿戴是另外兩個利基。','反射式前向顯示出貨預估 2025 年 130 萬片增至 2030 年 680 萬片。'],
+   ]},
+   {id:'trend',n:'06',t:'趨勢與挑戰',tab:'trend',c:'#2f9a5d',d:'壓力、機會、變數',q:[
+    ['中國 8.6 代線對彩晶的威脅是什麼？',['做 OLED 搶手機','用大世代切小尺寸 a-Si，單片成本更低','搶走玻璃供應','抬高偏光片價格'],1,'惠科、華星、京東方的 8.6 代線製程優化後開始切手機與平板 a-Si 面板，2026 年 8.6 代產能佔比升到 26%。集邦稱「小世代 LCD 產線面臨加速收斂壓力」。','5 代線只能靠靈活切割、少量多樣、特殊規格活。'],
+    ['OLED 已經吃掉哪些市場？',['電視全部','高階手機與穿戴','工控 HMI','電子標籤'],1,'中國 8 代級 AMOLED 線陸續投產，OLED 手機面板價格逐年下降，滲透率已過半；穿戴幾乎全面 OLED 化。a-Si LCD 手機面板只剩功能機與低價機。','消費性面板毛利低或負，這是彩晶壓低消費比重的原因。'],
+    ['車載對 LCD 廠為什麼是「剩下的好生意」？',['車廠不看價格','螢幕數量增加、案子生命週期 5 到 10 年、價格穩定','不需要認證','沒有競爭者'],1,'一台車從一片中控變成多片，HUD 與電子後視鏡是新品類。案子一旦 design-in 就鎖定整個車型生命週期，價格以年降 3% 到 5% 慢慢走。代價是 12 到 24 個月的驗證期。','車載規格：-30 到 +85°C、1000 nits 級、IATF 16949。'],
+    ['2026 年彩晶管理層點名的最大不確定因素是？',['匯率','記憶體價格上漲排擠消費性終端需求','電價','美國關稅'],1,'2026 年 DRAM 與 NAND 漲價，終端品牌調價，消費性面板需求被排擠。彩晶在股東會直接說這是最大不確定因素。','外部機構估 2026 年面板產值僅成長約 2%。'],
+    ['客戶為什麼會要求「非中國產地」選項？',['品質差','中美貿易戰後的關稅與合規考量','運費便宜','語言問題'],1,'中美貿易戰後，客戶要求供應鏈分散。彩晶前段在台灣是優勢，但後段模組在南京，2019 年起在南科建車載模組線補上非中國產地選項。','車用客戶對產地與供貨延續性特別敏感。'],
+    ['2028 年預估中國與台灣的 LCD 產能佔比各是？',['中國 50%、台灣 30%','中國 75%、台灣 16%','中國 90%、台灣 5%','中國 60%、台灣 25%'],1,'集邦預估 2028 年中國 75%、台灣 16%，日韓剩個位數。2026 年台灣約 18%（友達 9.2%、群創 9.1%）。','面板業的「全球產能重心」三十年內從日本、韓國、台灣移到中國。'],
+    ['低功耗與護眼需求來自哪裡？彩晶用什麼切入？',['遊戲；Mini LED','教育平板、電子書、戶外裝置與 ESG 要求；EVD 護眼屏','電視；10.5 代','伺服器；LTPS'],1,'教育平板、閱讀裝置、戶外設備要求低藍光、低耗電。反射式 LCD 與電子紙（元太、膽固醇液晶）在這塊競爭。彩晶以 ECO Vision Display 切入，2026 年在歐洲賣 23.8 吋護眼顯示器。','硬體式低藍光靠背光光譜，不偏黃。'],
+    ['市場討論中彩晶的三條路，哪一項「不是」？',['縮小規模專做利基','資產活化撐轉型','退出前段製造','擴建 8.6 代線'],3,'三種情境：減產到穩定接單量守車載工控穿戴；賣廠房土地換現金補轉型虧損（Q3 認列 21.6 億）；市場推測的關廠，若成真可能保留品牌與模組代理業務。擴建大世代線不在選項內。','9 月的減產傳聞符合第一條路。'],
+    ['2026 年下半年客戶最可能問業務的三件事是？',['顏色、亮度、價格','供貨延續性、EOL 計畫、產地','股價、董事長、資本額','運費、包裝、保險'],1,'公司減產與人事傳聞期間，客戶關心的是還能不能穩定拿到貨、停產怎麼安排、東西在哪裡做。這三題會比規格與價格更常被問到。','回答原則：以公司公告為準，不猜測，不承諾公告以外的內容。'],
+    ['二輪車市場的顯示趨勢是？',['取消儀表','段碼屏升級為 TFT 彩色儀表','改用 OLED','改用電子紙'],1,'機車、電動自行車儀表從只能顯示固定圖案的段碼 LCD，升級為彩色 TFT。量小、規格雜、要寬溫高亮，大廠不愛做，是彩晶看好的成長來源。','工控、醫療、二輪車的共同點：換供應商成本高。'],
+   ]},
+   {id:'sales',n:'07',t:'業務實務',tab:'sales',c:'#1b2230',d:'流程、客戶、規格、貿易',q:[
+    ['收到 RFQ 後，業務第一件事是？',['直接報最低價','判斷現有型號能否對應、數量是否值得客製、目標價與公開報價差多少','轉給工廠等回覆','要求客戶預付'],1,'客戶送來尺寸、解析度、亮度、介面、觸控、數量、目標價、時程。兩天內回覆初步可行性。能對應現有型號就不用 NRE、交期短。','客戶規格常是「抄競品的」，問出真正必要的項目。'],
+    ['車載案子從導入到量產通常要多久？',['數週','3 到 6 個月','12 到 24 個月','5 年'],2,'消費品數週到三個月，工控三到六個月含環境測試，車載 12 到 24 個月，走 IATF 16949 與 PPAP。驗證期間每個問題單都要追到關閉。','時間長，但一旦 design-in 就鎖 5 到 10 年。'],
+    ['消費性面板與車載面板的生命週期各約多久？',['都 1 年','消費 6 到 18 個月；車載 5 到 10 年含售後備品','消費 5 年；車載 1 年','都 10 年'],1,'手機平板產品換代快，價格每季甚至每月看公開報價談。車載與工控 5 到 10 年，價格相對穩定，車載以年降 3% 到 5% 走。','生命週期長的客戶最在意 EOL 與 LTB。'],
+    ['車載客戶的「年降」大約是？',['每年降 3% 到 5%','每年降 20%','不降價','每年漲價'],0,'車載報價要含年降計畫與備品供應年限。消費性面板則是每季甚至每月談，跟公開報價走。工控相對穩定。','報價單要註明有效期、匯率基準、材料漲價條款。'],
+    ['IATF 16949、ISO 13485、IEC 60945 分別對應哪個產業？',['汽車、醫療、海事','醫療、汽車、航空','海事、汽車、醫療','汽車、航空、鐵路'],0,'IATF 16949 是汽車業品質管理系統，沒有它 Tier 1 不會開案。ISO 13485 是醫療器材，IEC 60945 是海事設備。','AEC-Q100 是車規 IC 可靠度標準，PPAP 是量產前文件包。'],
+    ['PPAP 是什麼？',['一種付款條件','量產前提交客戶的完整文件包：流程圖、FMEA、控制計畫、測量報告','一種面板介面','一種玻璃規格'],1,'Production Part Approval Process。車載案子從樣品到量產的最後一關，通常三到六個月，由品保主導、業務追進度。','CS 之後走 PPAP，通過才進 MP。'],
+    ['型號 HSD101PXX1 中的「101」代表？',['第 101 版','10.1 吋','101 nits','1010 mm'],1,'HSD = HannStar Display，接著三碼是尺寸：101 = 10.1 吋，070 = 7 吋。後面是型號序與版本。','看到型號就能立刻說出尺寸，是基本功。'],
+    ['規格表寫 1000 nits、-30 到 +85°C，這是哪類應用？',['消費平板','車載或戶外','電子書','電視'],1,'1000 nits 是車載與戶外等級，消費平板 350 到 500。-30 到 +85°C 是車載工作溫度，消費品 0 到 50°C。寬溫需要特殊液晶材料與背光設計，成本高、開發期長。','亮度高，背光成本與功耗都高。'],
+    ['客戶要求改介面（例如 LVDS 改 MIPI）意味著什麼？',['只改一條線','等於重做驅動板與韌體','不影響','只改包裝'],1,'介面由客戶主機板決定。LVDS 用於工控車載，MIPI 用於手機平板，eDP 用於筆電。改介面是大工程，詢價時就要確認。','外形尺寸改 0.1 mm 客戶都可能要重開模具。'],
+    ['FOB 與 DDP 的差別是？',['FOB 含關稅到門，DDP 只到港口','FOB 客戶負責海運後風險；DDP 賣方一路送到門口含關稅','兩者相同','FOB 只用於空運'],1,'Incoterms 規定運費、保險、風險在哪裡轉移。同一個價格 FOB 與 DDP 差很多，報價一定要註明條件。車載客戶常要 DAP 到指定倉。','面板報價幾乎都是美元，新台幣升值直接吃毛利。'],
+    ['新客戶通常用什麼付款條件？',['OA 90 天','預付或 L/C 信用狀','免費樣品到量產','股票支付'],1,'T/T 電匯最常見。新客戶要求預付或 L/C，大客戶談 OA 月結 60 到 90 天。應收帳款風險由業務把關。','公司財報有匯損項目，就是美元報價的結果。'],
+    ['Open cell 還是模組，什麼時候該先問？',['出貨後','談報價之前','量產後','不用問'],1,'客戶有模組能力就買 open cell，單價低；沒有就買 LCM 或觸控顯示模組。交貨型態決定價格結構，談報價前先確認。','車載案子多半要到「LCM + 觸控 + 蓋板 + 光學貼合」這一層。'],
+    ['客戶問「公司最近的新聞是怎麼回事」，正確的回應原則是？',['說不知道','以公司公告為準，不猜測，不承諾公告以外的內容','分享內部傳聞','否認一切'],1,'2026 年下半年一定會被問。減產、優離、總經理請辭都是媒體報導與傳聞，公司說法是例行人力調整。業務能說的是公告內容、EOL 政策與 LTB 機制、替代型號。','供貨延續性的答案要有 EOL 政策、LTB 機制、替代型號三件事。'],
+    ['以下哪個不是面板業務每天會看的數字？',['稼動率','ASP','Forecast 準確度','股東人數'],3,'稼動率（投片 ÷ 產能，低於七成折舊攤不掉）、ASP（平均售價，往車載搬會上升）、毛利率（2026 上半年為負）、Forecast 準確度（預估與實際下單的差距）。','數字看得懂，才能跟工廠與客戶對話。'],
+    ['面板業的資訊來源，哪一個看「重大訊息與財報」？',['TrendForce','公開資訊觀測站','Touch Taiwan','DSCC'],1,'公開資訊觀測站看重訊與財報；彩晶官網投資人專區看每月營收；TrendForce（WitsView）看面板報價；Omdia、DSCC 看出貨統計；DIGITIMES、工商時報、經濟日報看產業新聞；Touch Taiwan（4 月）與 Display Week（5 月）是年度展會。','每月 10 日前後上市公司公布上月營收。'],
+   ]},
   ];
-  const box=$('#quiz');let score=0,done=0;
-  Q.forEach((q,i)=>{const d=document.createElement('div');d.className='q';d.innerHTML=`<b>${i+1}. ${q[0]}</b>`+q[1].map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join('')+`<div class="exp">${q[3]}</div>`;
-    $$('.opt',d).forEach(b=>b.addEventListener('click',()=>{if(d.classList.contains('done'))return;d.classList.add('done');const j=+b.dataset.j;if(j===q[2]){b.classList.add('ok');score++;}else{b.classList.add('no');$$('.opt',d)[q[2]].classList.add('ok');}done++;
-      if(done===Q.length){$('#quiz-score').style.display='block';$('#quiz-score-text').textContent=`答對 ${score} / ${Q.length} 題。`+(score>=8?'可以上班了。':'回頭看一下答錯的那幾頁。');}}));
-    box.appendChild(d);});
+  const ALL=[];CH.forEach(c=>c.q.forEach((q,i)=>ALL.push({c,q,id:c.id+'-'+i})));
+  $('#qz-total').textContent=ALL.length;
+  const KEY='hs-quiz-v2';let state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}};
+  const tabName={tech:'02 面板技術',terms:'03 術語庫',chain:'04 產業鏈',history:'05 台灣面板史',hannstar:'06 彩晶解析',trend:'07 趨勢與挑戰',sales:'08 業務實務'};
+  const dash=$('#qz-dash'),play=$('#qz-play'),card=$('#qz-card');
+
+  function renderDash(){
+    const box=$('#qz-chapters');box.innerHTML='';
+    let done=0,ok=0;
+    CH.forEach(c=>{
+      let d=0,k=0;c.q.forEach((q,i)=>{const s=state[c.id+'-'+i];if(s!==undefined){d++;if(s===q[2])k++;}});
+      done+=d;ok+=k;
+      const el=document.createElement('div');el.className='chap';el.style.borderTopColor=c.c;
+      el.innerHTML=`<div class="cn">CHAPTER ${c.n}</div><h4>${c.t}</h4><p>${c.d}</p><div class="bar"><i style="width:${d/c.q.length*100}%;background:${c.c}"></i></div><div class="cs"><span>${c.q.length} 題</span><span>${d?`已答 <b>${d}</b>，答對 <b>${k}</b>`:'尚未開始'}</span></div>`;
+      el.addEventListener('click',()=>start(c.q.map((q,i)=>({c,q,id:c.id+'-'+i})),c.t,c.c));
+      box.appendChild(el);
+    });
+    $('#qz-overall').textContent=done?`已答 ${done} / ${ALL.length} 題，答對 ${ok} 題`:'尚未作答';
+    $('#qz-overall-bar').style.width=(done/ALL.length*100)+'%';
+    const wrong=ALL.filter(x=>state[x.id]!==undefined&&state[x.id]!==x.q[2]);
+    $('#qz-wrong').disabled=!wrong.length;$('#qz-wrong').textContent=`重做所有錯題${wrong.length?`（${wrong.length}）`:''}`;
+  }
+
+  let run=null;
+  function start(list,title,color){
+    run={list,i:0,title,color,ok:0,wrong:[]};
+    dash.style.display='none';play.style.display='block';
+    $('#qz-chapname').textContent=title;$('#qz-bar').style.background=color||'var(--brand)';
+    window.scrollTo({top:0});renderQ();
+  }
+  function renderQ(){
+    const {list,i}=run;
+    if(i>=list.length){renderSummary();return;}
+    const it=list[i],q=it.q;
+    $('#qz-count').textContent=`第 ${i+1} / ${list.length} 題`;
+    $('#qz-bar').style.width=(i/list.length*100)+'%';
+    card.innerHTML=`<div class="qcard"><div class="qq"><small>${it.c.t.toUpperCase()} · ${it.c.n}</small>${q[0]}</div>${q[1].map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join('')}<div id="qz-learn"></div><div class="qnav"><span class="note">選一個答案，答錯也會看到完整說明。</span><button class="qbtn" id="qz-next" disabled>下一題 →</button></div></div>`;
+    $$('.opt',card).forEach(b=>b.addEventListener('click',()=>{
+      const j=+b.dataset.j,right=j===q[2];
+      $$('.opt',card).forEach(x=>{x.disabled=true;if(+x.dataset.j===q[2])x.classList.add('ok');});
+      if(!right)b.classList.add('no');
+      state[it.id]=j;save();if(right)run.ok++;else run.wrong.push(it);
+      $('#qz-learn').innerHTML=`<div class="learn ${right?'':'wrong'}"><div class="lt">${right?'答對了 · 學習卡':'答錯了 · 學習卡'}</div><h5>正解：${q[1][q[2]]}</h5><p>${q[3]}</p><div class="kf"><b>記住這句：</b>${q[4]}　<a href="#" data-tab="${it.c.tab}" class="qz-go">→ 前往 ${tabName[it.c.tab]}</a></div></div>`;
+      $('.qz-go',card).addEventListener('click',e=>{e.preventDefault();show(it.c.tab);});
+      const nb=$('#qz-next');nb.disabled=false;nb.textContent=i+1>=list.length?'看結果 →':'下一題 →';nb.focus();
+    }));
+    $('#qz-next').addEventListener('click',()=>{run.i++;window.scrollTo({top:0});renderQ();});
+  }
+  function renderSummary(){
+    const {list,ok,wrong,title}=run;const pct=Math.round(ok/list.length*100);
+    $('#qz-count').textContent='完成';$('#qz-bar').style.width='100%';
+    card.innerHTML=`<div class="qcard qsum"><div class="kicker">${title}</div><div class="sc">${ok} / ${list.length}</div><p class="note" style="margin-top:6px">答對率 ${pct}%。${pct>=80?'這一章可以放心。':pct>=60?'再看一次錯題的學習卡就夠了。':'建議先讀對應分頁，再重做一次。'}</p>
+      <div class="pill-row" style="margin-top:14px"><button class="qbtn" id="qz-redo-wrong" ${wrong.length?'':'disabled'}>重做這次的錯題（${wrong.length}）</button><button class="qbtn ghost" id="qz-redo-all">整章重做</button><button class="qbtn ghost" id="qz-home">回章節列表</button></div>
+      ${wrong.length?`<div class="wl"><h4 style="font-size:15px;margin-bottom:8px">錯題回顧</h4>${wrong.map(it=>`<div class="wi"><b>${it.q[0]}</b>正解：${it.q[1][it.q[2]]}<br><span>${it.q[3]}</span></div>`).join('')}</div>`:''}
+    </div>`;
+    $('#qz-redo-wrong').addEventListener('click',()=>start(wrong.slice(),title+'（錯題）',run.color));
+    $('#qz-redo-all').addEventListener('click',()=>start(list.slice(),title,run.color));
+    $('#qz-home').addEventListener('click',back);
+  }
+  function back(){play.style.display='none';dash.style.display='block';renderDash();window.scrollTo({top:0});}
+  $('#qz-back').addEventListener('click',back);
+  $('#qz-mixed').addEventListener('click',()=>{const a=ALL.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}start(a.slice(0,20),'綜合測驗','var(--ink)');});
+  $('#qz-wrong').addEventListener('click',()=>{const w=ALL.filter(x=>state[x.id]!==undefined&&state[x.id]!==x.q[2]);if(w.length)start(w,'錯題重做','var(--amber)');});
+  $('#qz-reset').addEventListener('click',()=>{if(confirm('清除所有作答紀錄？')){state={};save();renderDash();}});
+  renderDash();
 })();
 })();
 </script>
